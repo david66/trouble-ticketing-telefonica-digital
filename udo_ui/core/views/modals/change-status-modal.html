@@ -1,0 +1,22 @@
+
+<!-- Main Content ==================== -->
+<!-- End Main Content ==================== -->
+<div id="newStatusChange" class="row-fluid">
+    <div class="row-fluid">
+        <!-- Note description -->
+        <div class="modalStatusChange">
+           <div ng-show="newStatus.showDelayDescription">
+                <div class="">
+                    <label class="">{{ 'Cause'|i18n }}</label>
+                    <select class="" id="newStatus.delayDescription" ng-model="newStatus.delayDescription" ng-options="reason.name for reason in delayReasons">
+                        <option value=""> -- chose a delay description </option>
+                    </select>      
+                </div>
+            </div>
+            <div class="">
+                <label class="">{{ 'Description'|i18n }}</label>
+                <textarea id="newStatus.cause" rows="2" ng-model="newStatus.cause" placeholder="{{enterCause}}" ng-required="{{newStatus.causeRequired}}"/>      
+            </div>
+        </div>
+    </div>
+</div>

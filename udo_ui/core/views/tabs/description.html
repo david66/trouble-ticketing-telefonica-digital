@@ -1,0 +1,5 @@
+<input class="no-data" type="text" ng-readonly="true" ng-disabled="true" value="No Description Added." ng-hide="tab.data"></input>
+<div ng-show="tab.data">
+	<label>{{'Description'|i18n}}</label>
+	<textarea value="{{tab.data}}" ng-disabled="true"/>
+</div>

@@ -1,0 +1,53 @@
+<!-- Main Content ==================== -->
+<!-- End Main Content ==================== -->
+<div id="link" class="row-fluid">
+    <div class="row-fluid">
+        <!-- Note description -->
+        <div class="modalLinkIncidence">
+            <div class="span4">
+              <label class="">{{'Customer Service' | i18n}}</label>
+              <select class="" id="newCustomerService" ng-model="newIncidence.newCustomerService" ng-options="cs for cs in newIncidence.css" ng-change="afterCustomerServiceSelection(newIncidence.newCustomerService)"">
+                <option value=""> -- chose a customer service </option>
+              </select>
+            </div>
+            <div class="span4">
+              <label class="">{{'Incidence' | i18n}}</label>
+              <select class="" id="newIncidence" ng-model="newIncidence.newIncidence" ng-options="inc.eid for inc in newIncidence.incidences">
+              </select>
+            </div>
+            <div class="form-horizontal container-fluid"> <b> {{ 'Incidende detail summary' | i18n }} </b>
+                <div class="divContentModal" style="background-color: #F6F6F6;">
+                    <div class="control-group row-fluid">
+                        <div class="">
+                            <div class="span3">
+                                <label>{{ 'ID' | i18n }}</label>
+                                <input type="text" disabled="" role="textbox" autocomplete="off" class="ui-autocomplete-input ng-scope" value="{{ newIncidence.newIncidence.eid }}">
+                            </div>
+                            <div class="span3">
+                                <label>{{ 'Status' | i18n }}</label>
+                                <input type="text" disabled="" role="textbox" autocomplete="off" class="ui-autocomplete-input ng-scope" value="{{ newIncidence.newIncidence.status }}">
+                            </div>
+                            <div class="span3">
+                                <label>{{ 'Submission Date' | i18n }}</label>
+                                <input type="text" disabled="" role="textbox" autocomplete="off" class="ui-autocomplete-input ng-scope" value="{{ newIncidence.newIncidence.status_change.0.start }}">
+                            </div>
+                            <div class="span3">
+                                <label>{{ 'Customer Service' | i18n }}</label>
+                                <input type="text" disabled="" role="textbox" autocomplete="off" class="ui-autocomplete-input ng-scope" value="{{ newIncidence.newIncidence.contact.customerservice.code }}">
+                            </div>
+                            <div class="span3">
+                                <label>{{ 'Responsible User' | i18n }}</label>
+                                <input type="text" disabled="" role="textbox" autocomplete="off" class="ui-autocomplete-input ng-scope" value="{{ newIncidence.newIncidence.responsible.current.operator }}">
+                            </div>
+                            <div class="span3">
+                                <label>{{ 'Responsible Group' | i18n }}</label>
+                                <input type="text" disabled="" role="textbox" autocomplete="off" class="ui-autocomplete-input ng-scope" value="{{ newIncidence.newIncidence.responsible.current.group }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

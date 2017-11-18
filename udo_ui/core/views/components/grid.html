@@ -1,0 +1,18 @@
+<!-- Main Content ==================== -->
+<div class="form-legend" id="Input_Field"><div class="form-legend-title">{{'History' | i18n}} {{'Ticket' | i18n }}</div></div>       
+                    
+<div class="main-content">
+    <div class="detail-container">	
+        <!-- Grid Content ==================== -->
+        <div class="container-fluid">
+            <div class="span12">
+                <div ng-controller="gridCtrl" ng-init="initGrid({useLocation: true})" class="grid-container">
+                    <div ng-grid="gridOptions" class="gridStyle">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Grid Content ==================== -->
+    </div>
+</div>
+<!-- End Main Content ==================== -->

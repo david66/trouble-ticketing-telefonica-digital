@@ -1,0 +1,16 @@
+<!-- End Main Content ==================== -->
+<div id="newQuestionThread" class="row-fluid">
+    <div class="row-fluid">
+        <!-- QuestionThread description -->
+        <div class="modalQuestionThread">  
+            <div class="">
+                <label class="">{{ 'Question Thread'|i18n }}</label>
+                <textarea id="newQuestionThreadDescription" rows="2"
+                          ng-model="newQuestionThread.text"
+                          placeholder="{{enterDescription}}" ng-required="true"
+                          ng-change="checkQuestionThread(newQuestionThread.text)"/>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,726 @@
+.main-content {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: #f6f6f6;
+    background: @backgroundLightColor;
+    -webkit-transition: left .1s ease-out;
+    -moz-transition: left .1s ease-out;
+    -o-transition: left .1s ease-out;
+    transition: left .1s ease-out;
+    border-radius: 5px;
+    height: auto;
+    min-height: 1000px;
+    padding-right: 20px;
+    padding-left: 55px;
+    padding-bottom: 0px;
+    padding-top: 20px;
+}
+.navbar-content {
+    height: 20px;
+}
+.prueba {
+    width: auto;
+}
+.navbar {
+    margin-bottom: 0px;
+    position: fixed;
+    width: 90%;
+    z-index: 900;
+}
+
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+    color: @grayDark;
+    font-weight: bold;
+}   
+
+.navbar .brand {
+    font-weight: 220;
+    color: @grayDark !important;
+    padding: 10px 14px 10px !important;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.navbar-inner {
+    padding-left: 20px !important;
+}
+.navbar-icon {
+    float: right;
+    padding: 5px;
+    padding-top: 12px;
+    color: @grayDark;
+}
+.navbar-icon i {
+    padding: 7px;
+}
+
+.navbar-icon i:hover {
+    color: @grayFont;
+    cursor: pointer;
+    text-shadow: @grayDark;
+}
+
+.navbar-inner {
+    min-height: 40px;
+    height: 40px;
+    padding-right: 20px;
+    background-color: #fafafa;
+    background-image: -moz-linear-gradient(top, #fff, #f2f2f2);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#f2f2f2));
+    background-image: -webkit-linear-gradient(top, #fff, #f2f2f2);
+    background-image: -o-linear-gradient(top, #fff, #f2f2f2);
+    background-image: linear-gradient(to bottom, #fff, #f2f2f2);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffffff', endColorstr = '#fff2f2f2', GradientType = 0);
+    border: 1px solid #d4d4d4;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+
+.navbar-inner .btn-info {
+    background-color: transparent;
+    margin-top: 0;
+    font-size: @fontSizeLarge;
+    border: 0 solid #333;
+    color: @white;
+    background-color: rgba(46, 53, 63, 0.5);
+    background-image: -moz-linear-gradient(top, rgba(53, 61, 72, 0.3), rgba(42, 49, 58, 0.8));
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(53, 61, 72, 0.3)), to(rgba(42, 49, 58, 0.8)));
+    background-image: -webkit-linear-gradient(top, rgba(53, 61, 72, 0.3), rgba(42, 49, 58, 0.8));
+    background-image: -o-linear-gradient(top, rgba(53, 61, 72, 0.3), rgba(42, 49, 58, 0.8));
+    background-image: linear-gradient(to bottom, rgba(53, 61, 72, 0.3), rgba(42, 49, 58, 0.8));
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#4d353d48', endColorstr = '#cc2a313a', GradientType = 0);
+    -webkit-transition: background-color .015s linear;
+    -moz-transition: background-color .015s linear;
+    -o-transition: background-color .015s linear;
+    transition: background-color .015s linear;
+    text-shadow: @shadowText;
+}
+
+.btn-large{
+    padding: 9px 20px;
+    font-size: 17.5px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.navbar-inner {
+    padding-left: 0px;
+}
+
+.navbar-inner .btn, .navbar-inner.btn-group {
+    margin-top: 0px;
+    margin-right: 10px;
+}
+
+    .nav-fixed-left-detail {
+        position: absolute;
+        z-index: 1030;
+        height: 100%;
+    }
+
+    .nav-side-menu-detail {
+        position: absolute;
+        height: 100%;
+        background-image: url('/betacompan/udo_ui/images/udoUI/menu_bck.png');
+        -webkit-box-shadow: inset -12px 4px 10px -12px rgba(0, 0, 0, 0.6), inset 300px 0 0 rgba(0, 0, 0, 0.35);
+        -moz-box-shadow: inset -12px 4px 10px -12px rgba(0, 0, 0, 0.6), inset 300px 0 0 rgba(0, 0, 0, 0.35);
+        box-shadow: inset -12px 4px 10px -12px rgba(0, 0, 0, 0.6), inset 300px 0 0 rgba(0, 0, 0, 0.35);
+        -webkit-transition: all .025s linear;
+        -moz-transition: all .025s linear;
+        -o-transition: all .025s linear;
+        transition: all .025s linear
+    }
+
+    .nav-side-menu-detail [class^="icon-"], .nav-side-menu-detail [class*=" icon-"] {
+        position: relative;
+        float: left;
+        vertical-align: middle;
+        color: @grayFont;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        width: 38px;
+        margin: 0;
+        background-image: none;
+        z-index: 5;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7)
+    }
+    .nav-side-menu-detail [class^="icon-list-"], .nav-side-menu-detail [class*=" icon-list-"] {
+        padding-top: 5px;
+        margin-left: -10px;
+    }
+
+    .nav-side-menu-detail>li {
+        position: relative
+    }
+
+    .nav-side-menu-detail>li>a {
+        position: relative;
+        background: 0;
+        border-top: 1px solid rgba(31, 35, 40, 0);
+        border-bottom: 1px solid rgba(31, 35, 40, 0);
+        height: 28px;
+        padding: 0;
+        color: @grayFont;
+        font-size: 16px;
+        line-height: 20px;
+        text-shadow: none;
+        line-height: 28px
+    }
+
+    .nav-side-menu-detail>li>a:hover {
+        background: 0
+    }
+
+    .nav-side-menu-detail>li:hover .sub-nav .nav {
+        opacity: 1;
+        max-width: 200px
+    }
+
+    .nav-side-menu-detail>li:hover a {
+        background-color: rgba(31, 35, 40, 0.35);
+        border-top: 1px solid #1f2328;
+        border-bottom: 1px solid #1f2328;
+        -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 -3px 25px -5px rgba(0, 0, 0, 0.7);
+        -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 -3px 25px -5px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 -3px 25px -5px rgba(0, 0, 0, 0.7);
+        overflow: hidden
+    }
+
+    .nav-side-menu-detail>li:hover a .nav-selection {
+        color: @white
+    }
+
+    .nav-side-menu-detail>li:hover a [class^="icon-"], .nav-side-menu>li:hover a [class*=" icon-"] {
+        color: @white
+    }
+
+    .nav-side-menu-detail>li:hover .sub-nav a {
+        background-color: inherit;
+        border: 0;
+        -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0), inset 0 -3px 25px -5px rgba(0, 0, 0, 0);
+        -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0), inset 0 -3px 25px -5px rgba(0, 0, 0, 0);
+        box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0), inset 0 -3px 25px -5px rgba(0, 0, 0, 0)
+    }
+
+    .nav-side-menu-detail>li.nav-logout {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%
+    }
+
+    .nav-side-menu-detail>.shadow-layer {
+        position: absolute;
+        display: block;
+        right: 0;
+        height: 100%;
+        width: 0;
+        border-right: 0 solid rgba(0, 0, 0, 0);
+        z-index: 100;
+        -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0);
+        -moz-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0);
+        box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0);
+        -webkit-transition: all .025s linear;
+        -moz-transition: all .025s linear;
+        -o-transition: all .025s linear;
+        transition: all .025s linear
+    }
+
+    .nav-side-menu-detail:hover {
+        -webkit-box-shadow: inset -12px 4px 10px -12px rgba(0, 0, 0, 0), inset 300px 0 0 rgba(0, 0, 0, 0.35);
+        -moz-box-shadow: inset -12px 4px 10px -12px rgba(0, 0, 0, 0), inset 300px 0 0 rgba(0, 0, 0, 0.35);
+        box-shadow: inset -12px 4px 10px -12px rgba(0, 0, 0, 0), inset 300px 0 0 rgba(0, 0, 0, 0.35);
+        width: 200px;
+    }
+
+    .nav-side-menu-detail:hover .nav-selection {
+        max-width: 300px;
+        padding-right: 10px
+    }
+
+    .nav-side-menu-detail:hover .shadow-layer {
+        -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.8);
+        -moz-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.8)
+    }
+
+    .nav-side-menu-detail:hover .sub-nav-container .icon-menu-arrow {
+        max-width: 20px
+    }
+
+    .nav-selection {
+        position: relative;
+        display: inline-block;
+        max-width: 0;
+        overflow: hidden;
+        margin-left: 2px;
+        white-space: nowrap;
+        z-index: 5;
+        -webkit-transition: max-width .05s linear;
+        -moz-transition: max-width .05s linear;
+        -o-transition: max-width .05s linear;
+        transition: max-width .05s linear
+    }
+
+    .nav-selection::after {
+        content: '\00a0\00a0\00a0\00a0'
+    }
+    
+.form-horizontal .container-fluid {
+    padding: 0;
+    border: 1px solid #CCCCCC;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    background-color: #F6F6F6;
+    -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.8);
+    -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.8);
+}
+.container-fluid {
+    position: relative !important;
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    float: left;
+}
+
+//#symptoms, #description, #notes, #attachments, #questions {
+//    z-index: 300 !important;
+//    min-height: 70px;
+//}
+
+#symptoms textarea, #symptoms select {
+    width: 100% !important
+}
+
+
+.sub-container-fluid {
+    z-index: @zindexsubcontainerfluid;
+}
+
+.date input {
+    cursor: pointer;
+}
+
+legend, .form-legend{
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: @fontSize14;
+    text-shadow: 0 1px 0 @white;
+    font-weight: bold;
+    border-bottom: 1px solid #d0d0d0;
+    line-height: 28px;
+    border: 0;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(38%, rgba(0, 0, 0, 0)), color-stop(39%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.06)));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#00000000', endColorstr = '#0f000000', GradientType = 0);
+    color: @grayDark;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.form-legend-subfield-title{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 0px;
+    font-size: @baseFontSize !important;
+}
+
+.form-legend-title, .form-legend-subfield-title {
+    -moz-box-sizing: border-box;
+    background-color: rgba(220, 220, 220, 0.3);
+    border-bottom-color: #CCCCCC;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    color: #666;
+    display: block;
+    font-size: 115%;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-right: 5px;
+    text-align: center;
+    text-shadow: 0 1px 0 @white;
+}
+
+.form-detail {
+    margin-top: 30px;
+    }
+    
+.form-horizontal .control-group {
+    margin: 0;
+    //border-top: 1px solid transparent;
+    border-width: 1px 0 1px;
+    border-color: @grayFont transparent @grayFont;
+    background-color: transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.form-horizontal .controls {
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+label {
+    display: block;
+    margin: 0;
+    padding: 2px;
+    padding-left: 7px;
+    text-align: left;
+}
+.row-fluid .span2 {
+    width: 14.52991452991453%;
+}
+
+.form-search input, .form-inline input, .form-horizontal input, .form-search textarea,
+.form-inline textarea, .form-horizontal textarea, .form-search select, .form-inline select,
+.form-horizontal select, .form-search .help-inline, .form-inline .help-inline, .form-horizontal .help-inline,
+.form-search .uneditable-input, .form-inline .uneditable-input, .form-horizontal .uneditable-input,
+.form-search .input-prepend, .form-inline .input-prepend, .form-horizontal .input-prepend,
+.form-search .input-append, .form-inline .input-append, .form-horizontal .input-append {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: @fontSize14;
+    color: @grayDark;
+}
+.form-horizontal .tabDescription {
+    width: 10% !important;
+}
+
+.row-fluid [class*="span"] {
+    display: block;
+    min-height: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    margin-left: 0 !important;
+}
+
+.context_value {
+    width:99%;
+}
+
+
+label, input, button, select, textarea {
+    color: @grayDark;
+    font-size: @fontSize14;
+    line-height: 20px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+textarea{
+    width: 98% !important;
+}
+
+.removeNotes {
+    float: right;
+}
+
+.editable-click, a.editable-click {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+    border-bottom-color: #428BCA;
+    border-bottom-style: solid !important; 
+    border-bottom-width: 1px;
+    color: #428BCA;
+}
+
+.editable-fields a, .editable-fields-replan a, .editable-notes a,  #areaNotes .editable-notes pre, .field-newline-container text-area-field pre, 
+.text-area-field pre {
+    width: 75%;
+    align-content: left;
+    margin-left: 0;
+    text-align: left;
+    color: #428bca;
+    cursor: pointer;
+    border-color: #428bca !important;
+    border-style: 1px !important;
+    background-color: @white !important;
+}
+.editable-notes pre {
+    width: 98% !important;
+}
+
+.text-area-field pre {
+    width: 98% !important;
+    color: #428bca !important;
+}
+
+
+.statusClass a {
+    width: 58% !important;
+    margin-right: 5px;
+}
+.statusClass input {
+    width: 63% !important;
+    margin-right: 5px;
+}
+
+#ticketDetail .statusClass .popover, #problemDetail .statusClass .popover {
+    left: 20% !important;
+    font-size: 14px;
+    max-width: 700px !important;
+    position: absolute;
+}
+
+#incidenceDetail .statusClass .popover {
+    left: 40% !important;
+    font-size: 14px;
+    max-width: 700px !important;
+    position: absolute;
+}
+
+#workOrderDetail .statusClass .popover {
+    left: 75% !important;
+    font-size: 14px;
+    max-width: 700px !important;
+    position: absolute;
+}
+
+//.editable-notes pre:hover {
+//    background-image: url('/betacompany/udo_ui/img/edit-pencil.png') !important;
+//    background-repeat:no-repeat;background-position:right top !important;
+//    transition: background-position 0s linear !important;
+//}
+
+.editable-fields a.disabled, .editable-fields-replan a.disabled {
+    color: #428BCA;
+    font-size: @baseFontSize - 2;
+}
+#incidenceDetail .editable-fields .dropdown-menu {
+    margin-top: -278px;
+}
+
+.editable-click:hover, .editable-click:hover {
+    width: 75%;
+    align-content: left;
+    margin-left: 0;
+    text-align: left;
+    color: #428bca;
+    cursor: pointer;
+    border-color: #428bca;
+    border-style: solid;
+    background-image: url('/betacompany/udo_ui/img/edit-pencil.png') !important;
+    background-repeat:no-repeat;background-position:right center;
+    transition: background-position 0s linear !important;
+}
+
+.editable-notes a {
+    width: 97%;
+}
+
+.editable-controls > .dropdown-menu {
+    box-shadow: none !important;
+}
+
+.editable-input.editable-has-buttons {
+    width: 50% !important;
+}
+
+#workOrderDetail .text-area-field .editable-input.editable-has-buttons {
+    width: 200% !important;
+}
+.attachments-link-tooltip .tooltip-inner {
+    max-width: 500px !important;
+}
+.attachments-link-tooltip input {
+    width: 70% !important;
+    margin-right: 10px;
+}
+
+#symptoms-tab-content {
+    padding-bottom: 10px;
+}
+
+.tooltip {
+    z-index: 9900 !important;
+}
+
+input,textarea,select,.uneditable-input{
+    width:80% !important;
+}
+    
+#areaNotes input, .tab-content input,  .tab-content textarea {
+    width: 98% !important;
+//    color: #999999;
+}
+
+.inputThread {
+    margin-bottom: 0px !important;
+}
+.inputThread input{
+    float: left;
+    margin: 10px; 
+}
+.inputThread button{
+    float: right;
+    margin: 10px; 
+}
+
+.inputThread input{
+    width: 50% !important;   
+    -webkit-transition: width 0.5s ease, height 1s ease;  
+    -moz-transition: width 0.5s ease, height 1s ease;  
+    -o-transition: width 0.5s ease, height 2s ease;  
+    -ms-transition: width 0.5s ease, height 1s ease;  
+    transition: width 0.5s ease, height 1s ease;  
+}
+.inputThread input:focus, .inputThread input:active{
+    width:80% !important;
+
+}
+.thread {
+    margin-left: 10px;
+    margin: 3px;
+}
+.divQuestions {
+    height: auto;
+    background-color: transparent;
+    border: 1px solid;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: @baseFontSize - 2;
+}
+
+#notesArea {
+    text-align: left !important;
+    
+}
+#notesArea textarea{
+    width: 87% !important;
+    height: 20px;  
+}
+#notesArea textarea:focus, #notesArea textarea:active {
+    height: 100px;
+    -webkit-transition: width 0.5s ease, height 0.5s ease;  
+    -moz-transition: width 0.5s ease, height 0.5s ease;  
+    -o-transition: width 0.5s ease, height 0.5s ease;  
+    -ms-transition: width 0.5s ease, height 0.5s ease;  
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.popover .popover-title {
+    border: 0;
+    border-bottom: 1px solid #d0d0d0;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(38%, rgba(0, 0, 0, 0)), color-stop(39%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.06)));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#00000000', endColorstr = '#0f000000', GradientType = 0);
+    color: @grayDarker !important;
+    text-shadow: 0 1px 0 #fff;
+    font-size: 17px;
+    padding: 15px 15px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sla-info > .popover >  h3 {
+    color: @grayDarker !important;
+}
+.sla-info > .popover .popover-content {
+    background-color: transparent;
+}
+.divShow {
+    display: block;
+}
+
+.entityState {
+    float: right;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.label-assigned {   
+    background-color: #1D737A;
+    margin-left: 5px;
+    font-size: @baseFontSize - 4;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #063f4c;
+    *background-color: #084351;
+    background-image: -moz-linear-gradient(top, #237a8a, #084351);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#237a8a), to(#084351));
+    background-image: -webkit-linear-gradient(top, #237a8a, #084351);
+    background-image: -o-linear-gradient(top, #237a8a, #084351);
+    background-image: linear-gradient(to bottom, #237a8a, #084351);
+    background-repeat: repeat-x;
+    border-color: #084351 #084351 #023b49;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#237a8a', endColorstr='#084351', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.label-delegated {
+    background-color: #06A2C5;
+    margin-left: 5px;
+    font-size: @baseFontSize - 4;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #063f4c;
+    *background-color: #067992;
+    background-image: -moz-linear-gradient(top, #06A2C5, #067992);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#06A2C5), to(#067992));
+    background-image: -webkit-linear-gradient(top, #06A2C5, #067992);
+    background-image: -o-linear-gradient(top, #06A2C5, #067992);
+    background-image: linear-gradient(to bottom, #06A2C5, #067992);
+    background-repeat: repeat-x;
+    border-color: #067992 #067992 #023b49;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#06A2C5', endColorstr='#067992', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.udo-header span, .tabbable span {
+    vertical-align: text-top;
+    color: #666;
+    text-shadow: 0 1px 0 #ffffff;
+
+}
+.badge {
+  border: 1px solid #cccccc;  
+}
+.collapse {
+    position: inherit !important;
+}

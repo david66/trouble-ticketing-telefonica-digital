@@ -1,0 +1,63 @@
+<!-- Main Content ==================== -->
+<div class="main-content">
+  <div class="detail-container">
+    <div class="form-horizontal form-detail">
+      <!-- PROBLEM DETAIL -->
+       <box-container udo-title="Problem Detail" container-id="problemDetail">
+        <div class="row-fluid" ng-repeat="container in record.detail">
+          <box-section>
+            <field-dispatcher fields="container" show-data="showData" update-data="updateData">
+            </field-dispatcher>
+          </box-section>
+        </div>
+        <box-section>
+            <div field-line-dispatcher fields="affected"></div>
+            <div field-line-dispatcher fields="symptoms"></div>
+            <div field-line-dispatcher fields="solvingprocedures"></div>
+        </box-section>
+      </box-container>
+      <!-- END PROBLEM DETAIL -->
+      <!-- RELATED INCIDENCES -->
+      <div ng-if="problemHasAssociatedIncidences()">
+        <box-container udo-title="Related Incidences" container-id="relatedIncidencesDetail">
+          <div class="control-group row-fluid">
+          <!-- Grid Content ==================== -->
+            <div ng-controller="gridCtrl" ng-init="initGrid({data: relatedincidencesproblem, configKey: 'relatedIncidences', useLocation: false})" class="grid-container">
+              <div ng-grid="gridOptions" ng-required="true" class="gridStyle"></div>
+            </div>
+          </div>
+          <!-- End Grid Content ==================== -->
+        </box-container>
+      </div>
+      <!-- END RELATED INCIDENCES -->
+      <!-- NOTES -->
+      <box-container udo-title="Notes" container-id="areaNotes">                               
+        <!--Notes Field begin-->
+        <div name="areaNotes" class="row-fluid">
+          <div class="Module"> 
+          <input class="no-data" type="text" ng-readonly="true" ng-disabled="true" value="No notes Added. Use the side bar to add a new one." ng-show="annotations.length < 1"></input>
+          </div>
+        </div>
+        <div udo-annotations annotations="annotations" on-change="changeAnnotation"></div>
+      </box-container>
+      <!-- END NOTES -->
+    
+      <!-- ATTACHMENTS -->
+      <box-container udo-title="Attachments" container-id="areaAttachments">                                 
+        <div class="Module"> 
+          <input class="no-data" type="text" ng-readonly="true" ng-disabled="true" value="No attachments Added. Use the side bar to add a new one." ng-show="attachments.length < 1"></input>
+        </div>
+        <div udo-attachments attachments="attachments" remove="removeAttachment"></div>
+      </box-container>
+      <!-- END ATTACHMENTS -->
+    
+      <!-- FILE UPLOAD -->
+      <div class="form-horizontal" style='display: none;'>
+        <div file-upload action="{{ upload_detail_problem_url }}" btn-class='btn' btn-label="{{buttons.file}}" input-name="file" on-success='addAttachment(responseText)' progress-class='btn'>
+        </div>
+      </div>
+      <!-- END FILE UPLOAD -->
+    </div>
+  </div>
+</div>
+

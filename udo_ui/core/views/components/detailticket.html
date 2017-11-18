@@ -1,0 +1,63 @@
+<!-- Main Content ==================== -->
+<div class="main-content">
+  <!-- Detail Ticket Content ==================== -->
+  <div class="detail-container">
+    <div class="form-horizontal form-detail">
+      <!-- TICKET DETAIL -->
+      <box-container udo-title="Ticket Detail" container-id="ticketDetail">
+          <div class="row-fluid" ng-repeat="container in record.detail">
+            <box-section>
+              <field-dispatcher fields="container" show-data="showData" update-data="updateData">
+              </field-dispatcher>
+            </box-section>
+          </div>
+          <box-section>
+            <field-dispatcher fields="record.data" show-data="showData" update-data="updateData">
+            </field-dispatcher>
+          </box-section>
+          <box-section>
+            <tabset>
+              <tab ng-repeat="tab in record.tabs" active="tab.active" disabled="tab.disabled">
+                <tab-heading><i class="{{ tab.icon }}"></i>  {{tab.title| i18n}} <span ng-if="arrayNotEmpty(tab.data)" class="badge"> {{tab.data.length}}</span></tab-heading>              
+                <div ng-include="tab.contentUrl"></div>
+              </tab>
+            </tabset>
+          <box-section>
+      </box-container>
+      <!-- END TICKET DETAIL -->
+          
+      <!-- NOTES -->
+      <box-container udo-title="Notes" container-id="areaNotes">    
+        <!--Notes Field begin-->
+        <div name="areaNotes" class="row-fluid">
+          <div class="Module"> 
+            <input class="no-data" type="text" ng-readonly="true" ng-disabled="true" value="No notes Added. Use the side bar to add a new one." ng-show="annotations.length < 1"></input>
+          </div>
+          <div udo-annotations annotations="annotations" on-change="changeAnnotation"></div>
+        </div>
+      </box-container>
+      <!-- END NOTES -->
+
+      <!-- QUESTIONS -->
+      <box-container udo-title="Questions" container-id="questions">           
+        <div id="areaQuestions">
+          <div class="Module"> 
+            <input class="no-data" type="text" ng-readonly="true" ng-disabled="true" value="No conversations started. Use the side bar to create a new thread." ng-show="!conversation || conversation.length < 1"></input>
+          </div>
+          <div name="areaQuestions" class="row-fluid">
+            <div udo-questions conversation="conversation"></div>
+          </div>
+        </div>
+      </box-container>
+      <!-- END QUESTIONS --> 
+
+      <!-- FILE UPLOAD -->
+      <div class="form-horizontal" style='display: none;'>
+        <div file-upload action="{{upload_detail_ticket_url}}" btn-class='btn' btn-label="{{buttons.file}}" input-name="file" on-success='addAttachment(responseText)' progress-class='btn'/>
+      </div>
+      <!-- END FILE UPLOAD --> 
+    </div>
+  </div>
+    <!-- End Detail Content ==================== -->
+</div>
+<!-- End Main Content ==================== -->

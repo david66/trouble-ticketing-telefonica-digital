@@ -1,0 +1,57 @@
+<div class="widget-group" id="widget-group">
+  <!-- Include partial view -->
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="widget-holder widget-holder-disabled widget-disabled">
+        <div class="widget-area widget-area-disabled widget-general-activity">
+          <div class="widget-head widget-head-disabled">
+            General Activity
+            <div>
+              <i class="icon-sort pull-left"></i>
+            </div>
+          </div>
+          <ul ng-controller="widgetGaCtrl" >
+            <li ng-repeat="choice in items">
+              <span><i class="icon-tasks pull-left"></i>{{choice}}</span>
+              <div>
+                <span>?</span>
+                <i class="icon-caret-down"></i>
+              </div>
+            </li>
+          </ul>
+          <div class="widget-shadow widget-shadow-disabled"></div>
+        </div>
+      </div>
+      <div class="widget-holder widget-white">
+        <div class="widget-area widget-sla-views-graph">
+          <div class="widget-head">
+            Reports
+            <div>
+              <i class="icon-refresh pull-left"></i>
+            </div>
+          </div>
+            <p class="widget-description">UDo Jasper Reports <a href="https://colabora.tid.es/od/Docs/UDoReports/Forms/AllItems.aspx">link</a></p>
+          <div class="widget-shadow"></div>
+        </div>
+      </div>
+      <div class="widget-holder widget-holder-disabled widget-disabled">
+        <div class="widget-area widget-area-disabled widget-task-completion-disabled">
+          <div class="widget-head widget-head-disabled">
+            Task Completion
+            <div>
+              <i class="icon-ok pull-left"></i>
+            </div>
+          </div>
+          <ul ng-controller="widgetTcCtrl" >
+            <li ng-repeat="choice in items">
+              <a>{{choice}}</a>
+            </li>
+            <li class="processed-pct">
+              Processed Tickets: ?
+            </li>
+          </ul>
+          <div class="widget-shadow widget-shadow-disabled"></div>
+      </div>
+    </div>
+  </div>
+</div>

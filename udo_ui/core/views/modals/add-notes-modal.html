@@ -1,0 +1,27 @@
+
+<!-- Main Content ==================== -->
+<div id="gridNotes" class="">
+    <!-- Grid Content ==================== -->
+    <div class="">
+        <div class="grid-container">
+            <div ng-controller="gridCtrl" ng-init="initGrid({configKey: 'notes', useKey: true, useAfterSelectionChange: true})" class="grid-container">
+                <div><input class="searchNote" type="text" placeholder="Search Note..." ng-model="filterOptions.filterText"/></div>
+                <div ng-grid="gridOptions" ng-required="true" class="gridStyle"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Grid Content ==================== -->
+</div>
+
+<!-- End Main Content ==================== -->
+<div id="newNote" class="row-fluid">
+    <div class="row-fluid">
+        <!-- Note description -->
+        <div class="modalNotes">  
+            <div class="">
+                <label class="">{{ 'Note'|i18n }}</label>
+                <textarea id="newNoteDescription" rows="2" ng-model="newNote.value" placeholder="{{enterDescription}}" ng-required="true" ng-change="checkNote(newNote.value)"/>
+            </div>
+        </div>
+    </div>
+</div>

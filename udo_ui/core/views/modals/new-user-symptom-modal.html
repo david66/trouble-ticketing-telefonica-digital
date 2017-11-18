@@ -1,0 +1,11 @@
+<!-- NEW SYMPTOM MODAL -->
+<div class="modal-body info" style="color: #666666;">
+	<p>{{ 'Remember to search problem in symptoms list'|i18n }}</p>
+	<hr>
+	<label>{{ 'Enter short description (max &max)'|i18n|replace:{'&max': '40'}  }}</label>
+	<input name="newUserSymptomName" type="text" ng-model="newUserSymptom.name" ng-required="true" />
+	<p></p>
+	<label>{{ 'Explain symptom'|i18n }}</label>
+	<textarea name="newUserSymptomDescription" ng-model="newUserSymptom.description" style="width: 98%;" rows="5"/>
+</div>
+

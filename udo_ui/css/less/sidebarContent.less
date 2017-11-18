@@ -1,0 +1,105 @@
+// Specific styles for sidebar component
+
+.sidebarContent-fixed {
+    padding: 5px 0;
+    position: fixed;
+    height: 100%;
+    text-align: left;
+    margin-top: 42px;
+    z-index: 900;
+    border-top-right-radius: 5px;
+}
+
+.sidebarContent-fixed:hover {
+    width: 220px;
+    text-align: left;
+    height: 100%;
+    z-index: 900;
+}
+
+// TODO: use here properly defined variables (for shadow, and colors)
+
+.nav-main-menu-list {
+    min-width: 17px;
+}
+.nav-main-menu-list {
+    > li > a {
+        color: @grayFont;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 1px;
+	text-shadow: @shadowText;
+    }
+}
+
+/***************************************************
+// Active state
+.nav-main-menu-list  > .active > a,
+.nav-main-menu-list  > .active > a:hover,
+.nav-main-menu-list  > .active > a:focus {
+    color: @white;
+    background-color: @componentBackground;
+    font-weight: bold;
+}
+
+
+// Hover/Focus state
+// -----------
+.nav-main-menu-list > li > a:hover,
+.nav-main-menu-list > li > a:focus,
+.nav-main-menu-list:hover > a,
+.nav-main-menu-list:focus > a {
+    overflow: hidden;
+    border-top: 1px solid #1f2328;
+    border-bottom: 1px solid #1f2328;
+    .nav-items-shadows;
+    cursor: pointer;
+}
+***************************************************/
+
+.pull-down-element {
+    overflow: hidden;
+    padding-right: 0 !important;
+}
+
+#sidebarContentMainMenuList .main-menu-text {
+    max-width: 0;
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+#sidebarContentMainMenuList {
+    height: 100%;
+}
+
+#sidebarContentMainMenuList .sidebarLink-disabled, #sidebarContentMainMenuList .sidebarLink-disabled:hover,  #sidebarContentMainMenuList .sidebarLink-disabled:focus{
+    color: rgba(204, 204, 204, 0.5) !important;
+    border-color: transparent !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    text-shadow: @shadowText !important;
+    cursor: default !important;
+    background-color: transparent !important;
+    box-shadow:  transparent !important;
+    -webkit-box-shadow: transparent !important;
+}
+#sidebarContentMainMenuList .sidebarLink-enabled {
+    overflow: hidden !important;
+    color: @grayFont !important;
+    border-color: transparent !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    text-shadow: @shadowText !important;
+    cursor: pointer !important;
+}
+#sidebarContentMainMenuList .sidebarLink-enabled:hover {
+    color: @white !important;
+    background-color: @componentBackground !important;
+    border-top: 1px solid #1f2328;
+    border-bottom: 1px solid #1f2328;
+    .nav-items-shadows !important;
+    cursor: pointer !important;
+}
+

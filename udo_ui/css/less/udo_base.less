@@ -1,0 +1,104 @@
+
+// Styles for udo_base (base containers, backgrounds and so on)
+
+// Defines the min width of the sidebar component
+@minSidebarWidth: 2.5em !important;
+
+h4 {
+    color: @greenButton;
+}
+body {
+    background: @backgroundDarkColor;
+      height: 600px;
+}
+
+.udo-container {
+    padding: 0 60px 0 60px;
+}
+
+.udo-header {
+    position: fixed;
+    z-index: 1002;
+    padding-bottom: 20px;
+    padding-top: 0px;
+    width:90%
+}
+.udo-header, .udo-content {
+    margin: 33px auto 33px;
+}
+
+.udo-content {
+    padding-top: 125px;
+    position: absolute;
+    text-align: center;
+    background: @backgroundDarkColor;
+    width: 90%;
+}
+
+.udo-navBar {
+    text-align: center;
+    z-index: 1000;
+    width: 90%;
+    position: fixed;
+    padding: 70px 0 21px 0;
+}
+
+.widget-group {
+    margin: 0 0 30px;
+}
+
+.mandatory {
+    color: red;
+}
+
+.udo-header {
+    margin: 0px 0 0px;
+    text-align: center;
+}
+
+
+.dashboard-watermark {
+    position: fixed;
+    width: 425px;
+    height: 239px;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+    background: url('/betacompany/udo_ui/img/logoTef_watermark.png') no-repeat;
+}
+#loading-page {
+    z-index: 9990;
+}
+
+#loading-page .progress-striped {
+    top: 45%;
+    left: 25%;
+    width: 50%;
+    position: inherit;
+}
+
+#loading-page .progress-striped .bar {
+    width: 100%;
+    top: 30%;
+}
+.progress-striped .bar {
+    background-color: #052D34 !important;
+}
+//scroll
+
+.mCSB_scrollTools .mCSB_draggerContainer{
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	background:#185360 !important; /* rgba fallback */
+	background:rgba(24,83,96,0.75) !important;
+	filter:"alpha(opacity=75)"; -ms-filter:"alpha(opacity=75)"; /* old ie */
+}
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{
+	background:rgba(24,83,96,0.95) !important;
+	filter:"alpha(opacity=85)"; -ms-filter:"alpha(opacity=85)"; /* old ie */
+}
+
+
+

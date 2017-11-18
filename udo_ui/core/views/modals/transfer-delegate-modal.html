@@ -1,0 +1,20 @@
+<!-- Main Content ==================== -->
+<!-- End Main Content ==================== -->
+<div id="transfer" class="row-fluid">
+    <div class="row-fluid">
+        <!-- Note description -->
+        <div class="modalTransfer">
+            <div class="">
+              <!-- <label class="">{{'Select a group to Transfer'|i18n }}</label>  --> 
+              <label class="">{{'Responsible Group' | i18n}}</label>
+              <select class="" id="newGroup" ng-model="newResponsible.newGroup" ng-options="group.code for group in newResponsible.groups">
+                <option value=""> -- chose a group </option>
+              </select>      
+            </div>
+            <div class="">
+              <label class="">{{'Group Description'|i18n }}</label>
+              <textarea class="" id="newGroup.description" type="text" ng-readonly="true">{{newResponsible.newGroup.description}}</textarea>
+            </div>
+        </div>
+    </div>
+</div>

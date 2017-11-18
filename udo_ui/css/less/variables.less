@@ -1,0 +1,255 @@
+// General UDo-style variables and mixins
+
+// Variables
+// --------------------------------------------------
+
+
+// Global values
+// --------------------------------------------------
+
+
+// Grays
+// -------------------------
+@black:                 #000;
+@grayDarker:            #080808;
+@grayDark:              #666;
+@gray:                  #BBB;
+@grayLight:             #DFDFDF;
+@grayLighter:           #EEE;
+@white:                 #FFF;
+@grayFont:              #D1D7DF;
+
+
+// Accent colors
+// -------------------------
+@blue:                  #007FFF;
+@blueDark:              #1F26B6;
+@green:                 #3FB618;
+@greenButton:           #237a8a;
+@red:                   #FF0039;
+@yellow:                #FFA500;
+@orange:                #FF7518;
+@pink:                  #E671B8;
+@purple:                #9954BB;
+
+// Scaffolding
+// -------------------------
+@textColor:             @grayDark;
+@componentBackground:   rgba(46, 53, 61, 0.25);
+
+// Body reset
+// -------------------------
+
+body {
+  margin: 0;
+  font-family: @baseFontFamily;
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  color: @grayDark;
+  background-color: @backgroundDarkColor;
+}
+
+// Default style for label
+label {
+    cursor: default; // Overwrite boostrap cursor pointer
+}
+
+// Default style for pre
+pre {
+    text-align: left;
+}
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6 {
+    text-shadow: @shadowTextHeading;
+    color: @white;
+}
+
+// Shadows
+// -------------------------
+@shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05), inset 0 -3px 25px -5px rgba(0, 0, 0, 0.7); 
+@shadowOuter: 0 2px 7px 2px rgba(0, 0, 0, 0.6);
+@shadowBackground: @componentBackground;
+@shadowLinkBackgroundHover: rgba(31, 35, 40, 0.35);
+@shadowLinkBackgroundActive: rgba(31, 35, 40, 0.35);
+@shadowLinkColorHover: @white;
+@shadowLinkColorActive: @white;
+@shadowBorder: 1px solid #343b43;
+@shadowDividerTop: #1f2328;
+@shadowTextHeading: 0 1px 1px rgba(0, 0, 0, 0.4);
+@shadowText: 0 2px 1px rgba(0, 0, 0, 0.3);
+@shadowtoolbar: 0 1px 0 rgba(225, 225, 225, 0.2), inset 1px 1px 1px rgba(225, 225, 225, 0.1), 1px 0 0 rgba(225, 225, 225, 0.1);
+
+// Backgrounds
+// -------------------------
+@backgroundLightColor: url("/betacompany/udo_ui/img/detail_back.png");
+@backgroundDarkColor:  url("/betacompany/udo_ui/img/dashboard_back.png");
+
+// Links
+// -------------------------
+@linkColor:             @blue;
+@linkColorHover:        darken(@linkColor, 10%);
+
+
+// Typography
+// -------------------------
+// @telefonicaFontFamily is defined on udo_bootstrap/variables.less
+@fontDefaultWeight: normal;
+@fontDefaultStyle: normal;
+@fontDarkColor: @grayDark;
+@fontLightColor: #D1D7DF;
+@fontSize14: @baseFontSize * 0.88; // ~14px
+
+// font mixin (default color
+@font-face {
+  font-family: 'telefonica_textregular';
+  src: url('/betacompany/udo_ui/fonts/telefonicatext-regular-webfont.eot');
+  src: url('/betacompan/udo_ui/fonts/telefonicatext-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/betacompany/udo_ui/fonts/telefonicatext-regular-webfont.woff') format('woff'),
+  url('/betacompany/udo_ui/fonts/telefonicatext-regular-webfont.ttf') format('truetype'),
+  url('/betacompany/udo_ui/fonts/telefonicatext-regular-webfont.svg#telefonica_textregular') format('svg');
+  font-weight: @fontDefaultWeight;
+  font-style: @fontDefaultStyle;
+  font-size: @baseFontSize;
+}
+
+// Dark (default) font mixin
+.udo-font(@fontSize:@baseFontSize) {
+    color: @fontDarkColor;
+    font-size: @fontSize;
+}
+
+// Light font mixin
+.udo-light-font(@fontSize:@baseFontSize) {
+    color: @fontLightColor;
+    font-size: @fontSize;
+}
+
+// Icons
+// -------------------------
+[class^="icon-"].pull-left, [class*=" icon-"].pull-left {
+margin-right: 0px;
+min-width: 17px;
+}
+/* White icons with optional class, or on hover/focus/active states of certain elements */
+//.nav-main-menu-list > li > a:hover > [class^="icon-"],
+//.nav-main-menu-list > li > a:focus > [class*=" icon-"],
+//.nav-user-menu > li > a:hover > [class^="icon-"],
+//.nav-user-menu > li > a:focus > [class*=" icon-"] {
+//  background-image: url("@{iconWhiteSpritePath}");
+//}
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+
+// Tables
+// -------------------------
+
+
+// Buttons
+// -------------------------
+
+// Forms
+// -------------------------
+.input-date     {
+    width: 176px;
+    background-color: transparent !important;
+}
+
+
+
+// Dropdowns
+// -------------------------
+@dropdownBackground:            @shadowBackground;
+@dropdownBorder:                @shadowBorder;
+@dropdownDividerTop:            @shadowDividerTop;
+@dropdownDividerBottom:         @white;
+
+@dropdownLinkColor:             @grayFont;
+@dropdownLinkColorHover:        @shadowLinkColorHover;
+@dropdownLinkColorActive:       @shadowLinkColorActive;
+
+@dropdownLinkBackgroundActive:  @shadowLinkBackgroundActive;
+@dropdownLinkBackgroundHover:   @shadowLinkBackgroundHover;
+
+
+// COMPONENT VARIABLES (from bootsrap)
+// --------------------------------------------------
+
+
+// Z-index master list
+// -------------------------
+// Used for a bird"s eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+
+@zindexsubcontainerfluid:             100;
+
+// Input placeholder text color
+// -------------------------
+
+
+// Hr border color
+// -------------------------
+
+
+// Horizontal forms & lists
+// -------------------------
+
+
+// Wells
+// -------------------------
+
+
+// Navbar
+// -------------------------
+// Links rendered as pills
+.nav-pills > li > a {
+  .border-radius(0px);
+  margin: 0px;
+}
+.nav-pills.nav-stacked > li > a {
+margin-bottom: 0px;
+}
+
+// Inverted navbar
+
+
+// Pagination
+// -------------------------
+
+
+// Hero unit
+// -------------------------
+
+
+// Form states and alerts
+// -------------------------
+
+
+// Tooltips and popovers
+// -------------------------
+
+
+
+// Special enhancement for popovers
+
+
+// GRID
+// --------------------------------------------------
+
+
+// Default 940px grid
+// -------------------------
+
+
+// Fluid grid
+// -------------------------
+
+// 1200px min
+
+// 768px-979px
+
+

@@ -1,0 +1,7 @@
+<input class="no-data" type="text" ng-readonly="true" value="No symptoms Added." ng-show="tab.data.length < 1"></input>
+<div id="symptoms-tab-content" ng-repeat="symptom in tab.data">
+	<div class="row-fluid control-group">
+		<label>{{symptom.name}}</label>
+		<textarea value="{{symptom.description}}" role="textbox" ng-disabled="true" rows="2"/>
+	</div>
+</div>

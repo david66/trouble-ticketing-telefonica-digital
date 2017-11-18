@@ -1,0 +1,46 @@
+<!-- Main Content ==================== -->
+<div class="main-content"><div class="detail-container"><div class="form-horizontal form-detail">
+  <!-- WORK ORDER DETAIL BOX -->
+  <box-container udo-title="Work Order Detail" container-id="workOrderDetail">
+    <box-section>
+      <field-dispatcher fields="fields.mainData" show-data="showData" update-data="updateData">
+      </field-dispatcher>
+      <field-dispatcher fields="fields.specialData" show-data="showData" update-data="updateData">
+      </field-dispatcher>
+    </box-section>
+    <box-section>
+      <field-dispatcher fields="fields.dates" show-data="showData" update-data="updateData">
+      </field-dispatcher>
+    </box-section>
+    <box-section>
+      <div field-line-dispatcher fields="fields.subject" show-data="showData" update-data="updateData"></div>
+      <div field-line-dispatcher fields="fields.impactSrv" show-data="showData" update-data="updateData"></div>    
+    </box-section>
+    <box-section>
+      <tabset>
+        <tab ng-repeat="tab in fields.tabs" active="tab.active" disabled="tab.disabled">
+          <tab-heading><i class="{{ tab.icon }}"></i>  {{tab.title| i18n}} <span ng-if="arrayNotEmpty(tab.data)" class="badge"> {{tab.data.length}}</span></tab-heading>              
+          <div ng-include="tab.contentUrl"></div>
+        </tab>
+      </tabset>
+    <box-section>
+  </box-container>
+  <!-- END WORK ORDER DETAIL BOX -->
+  <!-- NOTES -->
+  <box-container udo-title="Notes" container-id="areaNotes">    
+    <!--Notes Field begin-->
+    <div name="areaNotes" class="row-fluid">
+      <div class="Module"> 
+        <input class="no-data" type="text" ng-readonly="true" ng-disabled="true" value="No notes Added. Use the side bar to add a new one." ng-show="annotations.length < 1"></input>
+      </div>
+      <div udo-annotations annotations="annotations" on-change="changeAnnotation"></div>
+    </div>
+  </box-container>
+  <!-- END NOTES -->
+  <!-- FILE UPLOAD -->
+  <div class="form-horizontal" style='display: none;'>
+    <div file-upload action="{{upload_detail_wos_url}}" btn-class='btn' btn-label="{{buttons.file}}" input-name="file" on-success='addAttachment(responseText)' progress-class='btn'/>
+  </div>
+  <!-- END FILE UPLOAD --> 
+  <!-- END Workorder detail box -->
+</div></div></div>

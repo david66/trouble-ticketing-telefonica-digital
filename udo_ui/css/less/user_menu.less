@@ -1,0 +1,180 @@
+
+//TODO refactor using less variables
+
+.nav-fixed-topright {
+    -moz-box-sizing: border-box;
+    border-top: 1px solid #1f2328;
+    border-bottom: 1px solid #1f2328;
+    border-radius: 0 0 0 5px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: all 0.1s linear 0s;
+    width: auto;
+    z-index: 1003;
+    .component-background;
+    .box-shadow(@shadow);
+	.box-shadow(@shadowOuter);
+}
+
+.nav-user-menu > li {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-user-menu > li > a {
+    color: #D1D7DF;
+    line-height: 30px;
+    height: 30px;
+    padding: 0 10px;
+    position: relative;
+    text-shadow: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-shadow: @shadowText;
+}
+
+.nav-user-menu > li > a:hover {
+    .nav-items-shadows;
+    border-top: 1px solid #1f2328;
+    border-bottom: 1px solid #1f2328;
+    .flag.flag-pt {background-position: -16px 0}
+    .flag.flag-es {background-position: 0 -11px}
+    .flag.flag-en {background-position: -16px -11px}
+}
+
+.nav-user-menu > li:first-child, .nav-user-menu > li > a:first-child  {
+    border-radius: 0 0 0 5px;
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu{
+    display: block;
+    cursor: pointer;
+    min-width: 0;
+    .box-shadow(@shadowOuter);
+    .component-background;
+    cursor:pointer;
+    margin-top: 0;
+    border: 1px solid transparent;
+}
+
+
+.nav-user-menu > .popover {
+    width: 195px !important;
+    top: 35px !important;
+    left: auto !important;
+    right: 10px !important;
+    color: @fontDarkColor;
+    font-size: 15px;
+}
+.nav-user-menu > .popover .arrow {
+    left:78%;
+}
+.nav-user-menu > .popover .popover-title {
+    border: 0;
+    border-bottom: 1px solid #d0d0d0;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(38%, rgba(0, 0, 0, 0)), color-stop(39%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.06)));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#00000000', endColorstr = '#0f000000', GradientType = 0);
+    color: @grayDarker;
+    text-shadow: 0 1px 0 #fff;
+    font-size: @fontSizeLarge;
+    padding: 15px 15px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+.nav-user-menu > .popover .popover-content {
+    background-color: transparent;
+}
+// Hover/Focus state
+// -----------
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus,  .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
+    overflow: hidden;
+    border-top: 1px solid #1f2328;
+    border-bottom: 1px solid #1f2328;
+    .nav-items-shadows;
+}
+
+// Links within the dropdown menu
+.dropdown-menu  > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    white-space: nowrap;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    text-shadow: @shadowText;
+}
+
+.white-caret {
+    border-top-color: @grayFont !important;
+    border-bottom-color: @grayFont !important;
+    margin-top: 0.9em !important;
+}
+// Flags Icons
+.flag {
+    width: 16px;
+    height: 11px;
+    background:url("/betacompany/udo_ui/img/flags.png") no-repeat;
+    vertical-align: inherit;
+}
+
+.flag.flag-pt {background-position: -16px 0}
+.flag.flag-es {background-position: 0px -11px}
+.flag.flag-en {background-position: -16px -11px}
+
+
+
+
+/*BORRAR?*/
+.accordion-group {
+    border: 1px solid #d1d7df !important;
+}
+.page-header {
+    border-bottom: 1px solid #d1d7df !important;
+}
+hr {
+    border-top: 1px solid #d1d7df !important;
+}
+.well {
+    border: 1px solid #d1d7df !important;
+    -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.8) !important;
+    -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.8) !important;
+}
+pre {
+    border: 1px solid #d1d7df !important;
+    -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.8) !important;
+    -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.8) !important;
+}
+.progress {
+    border: 1px solid #d1d7df !important;
+}
+.nav-tabs {
+    border-bottom: 1px solid #d1d7df !important;
+}
+.bs-docs-example {
+    border: 1px solid #d1d7df !important;
+}
+.navbar-inner {
+    border: 1px solid #d1d7df !important;
+}
+.breadcrumb {
+    border: 1px solid #d1d7df !important;
+}
+.pagination ul>li>a, .pagination ul>li>span {
+    border: 1px solid #d1d7df !important;
+}
+.pager li>a, .pager li>span {
+    border: 1px solid #d1d7df !important;
+}

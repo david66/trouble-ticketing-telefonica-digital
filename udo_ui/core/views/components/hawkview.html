@@ -1,0 +1,38 @@
+<div class="widget-area sidebar">
+<div class="widget-holder-sidebar widget-holder-sidebar-disabled widget-disabled"> 
+  <div class="widget-head  widget-head-disabled">
+    Custom Lists
+    <div>
+      <i class="icon-sort pull-left"></i>
+    </div>
+  </div> 
+  <ul ng-controller="widgetHlvCtrl" >  
+    <li ng-repeat="choice in items">
+      <a><i class="icon-tasks pull-left"></i>{{choice}}</a>
+      <div>
+        <span>?</span>
+        <i class="icon-caret-down"></i>
+      </div>
+    </li>
+  </ul>
+  <div class="widget-sidebar-shadow"></div>
+  <div class="widget-holder-sidebar widget-holder-sidebar-disabled widget-disabled">
+    <div class="widget-head widget-head-disabled">
+      SLA Violations Lists
+      <div>
+        <i class="icon-sort pull-left"></i>
+      </div>
+    </div>
+    <ul ng-controller="widgetHlvCtrl" >  
+      <li ng-repeat="choice in items">
+        <a><i class="icon-tasks pull-left"></i>{{choice}}</a>
+        <div>
+          <span>?</span>
+          <i class="icon-caret-down"></i>
+        </div>
+      </li>
+    </ul>
+    <div class="widget-sidebar-shadow"></div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,26 @@
+<div class="woModalContent">
+	<div class="divContentModal row-fluid">
+		<div id="Input_Field"><div class="form-legend-subfield-title">
+			<label><b>{{ 'Change Dates To Replan' | i18n }}</b> </label>
+		</div>
+	</div>
+	<div class="wizard-field">
+		<div class="span5">
+			<label>{{ time.planned_start_date.name | i18n }}</label>
+			<div class="editable-fields-replan">
+				<a class="btn disabled" href="#" editable-bsdatetime="time.planned_start_date.value" e-datetimepicker-config="{ dropdownSelector: '.my-toggle-select', startView: 'day',  minView: 'minute' }" e-required="time.planned_start_date.mandatory">{{showData(time.planned_start_date)}}</a>
+			</div>
+		</div>
+		<div class="span5">
+			<label>{{ time.planned_end_date.name | i18n }}</label>
+			<div class="editable-fields-replan">
+				<a class="btn disabled" href="#" editable-bsdatetime="time.planned_end_date.value" e-datetimepicker-config="{ dropdownSelector: '.my-toggle-select', startView: 'day',  minView: 'minute' }" e-required="time.planned_end_date.mandatory">{{showData(time.planned_end_date)}}</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="" ng-if="alert.msg">
+	<alert type="alert.type">{{alert.msg|i18n}}</alert>
+</div>
+
+

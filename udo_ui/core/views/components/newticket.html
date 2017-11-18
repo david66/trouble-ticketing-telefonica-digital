@@ -1,0 +1,226 @@
+<!-- Main Content ==================== -->
+<div class="main-content" id="main-content">
+    <!-- New Ticket Content ==================== -->
+    <div class="detail-container" id="detail-container-ticket">  
+        <!-- FORM -->
+        <form name="wizard" class="form-horizontal form-detail">
+        <!-- DATA CONTACT -->
+        <div class="container-fluid" id="data"> <div class="span12">
+            <div class="form-legend" id="Input_Field">
+              <div class="form-legend-title">{{'New Ticket' | i18n}}</div>
+            </div>                                
+            <!--Input Field begin-->
+            <div id="areacontact">
+              <div ng-repeat="field in record_contact">
+                <div class="span3 wizard-control"  ng-if="!notApplyField(field)">
+                  <label>{{ field._name|i18n }} <i class="icon-exclamation-sign mandatory"  ng-if="field._mandatory"  popover="This field is mandatory" popover-trigger="hover"></i></label>
+                  <div class="wizard-field" ng-switch="field._widget">
+                    <!-- TEXT FIELD -->
+                    <input name="text_field" ng-switch-when="text" type="text" ng-model="field._value" ng-required="field._mandatory" ng-disabled="field._disabled"/>
+                    
+                    <!-- NUMBER FIELD -->
+                    <input name="number_field" ng-switch-when="integer" type="number" ng-model="field._value" ng-required="field._mandatory" ng-disabled="field._disabled"/>
+                    
+                    <!-- SELECT FIELD -->
+                    <select name="select_field" ng-switch-when="array" ng-model="field._value" ng-required="field._mandatory" ng-options="o.key as o.name for o in field._type" ng-disabled="field._disabled">
+                      <option value="">{{selectOption|i18n}}</option>
+                    </select>
+                    
+                    <!-- DATE FIELD -->
+                    <div class="form-horizontal date" ng-switch-when="date">
+                        <!-- <input class="date" name="date_field" type="text" placeholder="{{selectDate}}" datepicker-popup="dd-MMMM-yyyy" ng-model="field._value" is-open="field._openCalendar" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabledWeek(date, mode)" ng-required="field._mandatory"/> -->
+                        <!-- <button class="btn" ng-click="openCalendar(field)"><i class="icon-calendar"></i></button> -->
+                        <div class="dropdown">
+                          <a class="dropdown-toggle my-toggle-select" id="dLabel" role="button"
+                          data-target="#" href="#">
+                          <div class="input-append">
+                            <input type="text" class="input-date" data-ng-model="field._value" readonly>
+                            <span class="add-on"><i class="icon-calendar"></i></span>
+                          </div>
+                          </a>
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <datetimepicker data-ng-model="field._value" data-datetimepicker-config="{ dropdownSelector: '.my-toggle-select', startView: 'day',  minView: 'day'}">
+                            </datetimepicker>
+                          </ul>
+                        </div>
+          </div>
+
+          <!-- TIME FIELD -->
+          <div class="form-horizontal date" ng-switch-when="time">
+                        <div class="dropdown">
+                          <a class="dropdown-toggle my-toggle-select" id="dLabel" role="button"
+                          data-target="#" href="#">
+                          <div class="input-append">
+                            <input type="text" class="input-date" data-ng-model="field._value" readonly>
+                            <span class="add-on"><i class="icon-calendar"></i></span>
+                          </div>
+                          </a>
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <datetimepicker data-ng-model="field._value" data-datetimepicker-config="{ dropdownSelector: '.my-toggle-select' }">
+                            </datetimepicker>
+                          </ul>
+                        </div>
+          </div>    
+                </div>
+              </div>
+            </div>
+            
+            <!-- FILE UPLOAD -->
+            <div class="form-horizontal" style="display: none">
+              <div file-upload action='/api/dms/upload' btn-class='btn' btn-label="{{buttons.file}}" input-name="file" on-success='addAttachment(responseText)' progress-class='btn'/>
+              </div> 
+            </div>
+          </div>
+        </div>
+        <!-- END DATA CONTACT -->
+        
+        <!-- SYMPTOMS -->
+        <div class="container-fluid" id="symptoms">
+          <div class="span12">
+            <div class="form-legend" id="Input_Field">
+              <div class="form-legend-title">{{'Symptoms' | i18n}}</div>
+            </div>                                  
+            <!--Symptoms Field begin-->
+            <div name="areaSymptoms" class="wizard-group row-fluid">
+              <div class="row-fluid">
+                <!-- SELECT SYMPTOM -->
+                <div class="span5 divSymptoms row-fluid">
+                  <div id="Input_Field">
+                    <div class="form-legend-subfield-title">{{ 'Select one or more symptoms'|i18n }}</div>
+                  </div>   
+                  <div class="wizard-field selectSymptoms">
+                    <select class="span12" multiple name="symptoms" ng-model="availableSymptoms" ng-options="o.key as o.name for o in record_allSymptoms"></select>
+                  </div>
+                </div>
+                <!-- SELECT/UNSELECT SYMPTOMS BUTTONS -->
+                <div class="span1 buttonsSymptoms row-fluid wizard-control">
+                  <div class="btn-group  btn-group-vertical">
+                    <ul>
+                      <li class="buttons-margin">
+                        <button class="btn btn-large" ng-click="addSymptom()" ng-disabled='notSelected(availableSymptoms)'>
+                          <i class="icon-chevron-right"></i>
+                        </button>
+                      </li>
+                      <li>
+                        <button class="btn btn-large" ng-click="deleteSymptom()" ng-disabled='notSelected(selectedSymptoms)'>
+                          <i class="icon-chevron-left"></i>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- SELECTED SYMPTOMS -->
+                <div class="span5 divSymptoms row-fluid">
+                  <div id="Input_Field"><div class="form-legend-subfield-title">{{ 'Selected Symptoms'|i18n }}</div></div>   
+                    <div class="wizard-field selectSymptoms">
+                      <select class="span12" multiple  name="selectedSymptoms" ng-model="selectedSymptoms" ng-options="o.key as o.name for o in record_symptoms"></select>
+                    </div>
+                  </div>
+                </div>
+                <div class="span11 row-fluid wizard-control">
+                  <!-- DESCRIPTION SELECTED SYMPTOM -->
+                  <label class="wizard-label">{{ 'Symptom Description'|i18n }}</label>
+                  <textarea class="symptomDescription" name="symptomDescription" type="text" ng-readonly="true" ng-model="v_symptomDescription">{{v_symptomDescription}}</textarea>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- END SYMPTOMS -->
+        
+      <!-- DESCRIPTION -->
+      <div class="container-fluid" id="description">
+        <div class="span12">
+          <div class="form-legend" id="Input_Field">
+            <div class="form-legend-title">{{'Description' | i18n}}</div>
+          </div>                               
+          <!--Description Field begin-->
+        <div name="areaDescription" class="wizard-group">
+                    <div class="row-fluid">
+                        <!-- DESCRIPTION TYPE LIST (NOT TEMPLATE BY DEFAULT) -->
+                        <div class="span4 divDescription row-fluid" ng-if="noTemplateByDefault">
+                            <div id="Input_Field"><div class="form-legend-subfield-title">{{ 'Description List'}}</div></div>   
+                            <div class="Module">
+                                <label data-ng-repeat="tabDescription in templates.list">
+                                    <input class="tabDescription" name="description" type="radio" value="{{tabDescription.name}}" ng-click="selectTemplate(tabDescription)"/>{{tabDescription.name}}
+                                </label>
+                            </div>
+                        </div>
+                        <!-- TEMPLATE DESCRIPTION WHEN TEMPLATE BY DEFAULT -->
+                        <div class="divDescription row-fluid" ng-class="templateClass()">
+                            <div id="Input_Field"><div class="form-legend-subfield-title">{{ 'Free Description'|i18n }}</div></div>   
+                            <div class="Module">
+                                <div>
+                                    <template-description name="templateDescription"/>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END DESCRIPTION -->
+                        
+        <!-- NOTES -->
+        <div class="container-fluid" id="notes">
+            <div class="span12">
+                <div class="form-legend">
+                    <div class="form-legend-title">{{'Notes' | i18n}}</div>
+                </div>
+                <div class="Module"> 
+                    <input class="no-data" type="text" ng-readonly="true" ng-disabled="true" value="No annotations Added. Use the side bar to add a new Note." ng-show="annotations.length < 1"></input>
+                </div>
+                <div id="notesArea" ng-repeat="annotation in annotations">
+                    <div id="{{ 'annotation' + $index }}" class="row-fluid">
+                        <div class="row-fluid control-group">
+                            <label>{{ annotation.code }}</label>
+                            <div class="span11">
+                                <pre style="white-space: normal; ">{{ annotation.value }}</pre> 
+                            </div>
+                            <div class="removeNotes">
+                                <button type="button" class="btn btn-default" ng-click="deleteAnnotation($index)" >
+                                    <i class="icon-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END NOTES -->
+
+        <!-- ATTACHMENTS -->
+        <div id="attachments" class="container-fluid">
+            <div class="span12">
+                <div class="form-legend" id="attach-header"><div class="form-legend-title">{{'Attachments' | i18n}}</div></div>
+                <div class="Module"> 
+                    <input class="no-data" type="text" ng-readonly="true" ng-disabled="true" value="No attachments Added. Use the side bar to attach a File." ng-show="annotations.length < 1"></input>
+                </div>
+                <div udo-attachments attachments="attachments" remove="removeAttachment"></div>
+            </div>
+        </div>
+
+        <!-- END ATTACHMENTS -->
+
+            <!-- BUTTONS -->                                
+            <div class="container-fluid" id="buttons">
+                <div class="span12">
+                    <div id="areabuttons">
+                        <!--<div class="left">
+                            <div class="progress progress-striped">
+                                <div class="progress-bar progress-bar-success" aria-valuetransitiongoal="60"></div>
+                            </div>
+                        </div>-->
+                        <!-- BUTTONS -->
+                        <div class="right">
+                        <div name="areaButtons" >   
+                                <button type="button" class="btn btn-udo-warning" ng-click="clear(true)" ng-disabled='isUnchanged()'><i class="icon-eraser"></i> {{ buttons.clear|i18n }}</button>
+                                <button type="submit" class="btn btn-udo-save" ng-click="save()" ng-disabled='wizard.$invalid'><i class="icon-ok"></i> {{ buttons.save|i18n }}</button>
+                            </div>
+                        </div>  
+                    </div>
+                </div>                                
+            </div>
+        </form>
+    </div>
+</div>
+<!-- End Main Content ==================== -->

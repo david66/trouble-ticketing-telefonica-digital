@@ -1,0 +1,491 @@
+// Specific styles for navigation Bar component
+
+.udo-navBar {
+    background-image: url("/betacompany/udo_ui/img/dashboard_back.png");
+}
+
+.udo-navBar ul{
+    margin: 0;
+    padding: 0;
+    height: 65px;
+    list-style: none;
+    background-color: rgba(46, 53, 61, 0.45);
+    border:  @shadowBorder;
+    .border-radius(8px);
+    .shadowToolbar();
+}
+
+.udo-navBar ul li:first-child {
+    padding-top: 9px;
+    padding-left: 9px;
+    padding-right: 9px;
+    float: left;
+    text-align: right;
+    width: 65px;
+}
+
+.udo-navBar ul li, .udo-navBar ul li a {
+    float: left;
+    width: 135px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: @grayFont;
+    text-shadow: @shadowText;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    text-decoration: none;
+}
+
+.shadowToolbar() {
+    box-shadow: @shadowtoolbar;
+}
+
+// New + Button
+// -------------------------
+.udo-navBar ul li .add-quick-launch:hover {
+    cursor: pointer;
+    background-position: 0 -50px
+}
+.udo-navBar ul li:first-child:hover {
+    background: 0;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none
+}
+
+.add-quick-launch {
+    position: relative;
+    top: -1px;
+    right: -1px;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background: url('/betacompany/udo_ui/img/toolbarplus@2x.png') no-repeat;
+    background-size: 50px 100px;
+    background-position: 0 0;
+}
+.add-quick-launch {
+    position: relative;
+    top: -1px;
+    right: -1px;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background: url('/betacompany/udo_ui/img/toolbarplus@2x.png') no-repeat;
+    background-size: 50px 100px;
+    background-position: 0 0;
+}
+// Navigation Bar Buttons
+// -------------------------
+.udo-navBar ul li:hover, .udo-navBar ul li a:hover {
+    cursor: pointer;
+    color: @white;
+    background-color: rgba(36, 43, 53, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+// Search Input Navigation Bar
+// -------------------------
+.udo-navBar ul li:last-child {
+    padding-top: 17px;
+    padding-left: 9px;
+    padding-right: 15px;
+    float: right;
+    text-align: left;
+    width: 30%;
+}
+
+.udo-navBar ul li:last-child:hover {
+    background: 0;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    padding-top: 17px;
+    padding-left: 9px;
+    padding-right: 15px;
+    float: right;
+    text-align: left;
+    width: 30%;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    cursor: default;
+}
+
+.udo-navBar ul li p {
+    margin: 20px 0 10px;
+    height: 35px;
+    line-height: 27px;
+    font-size: 17px;
+}
+
+.udo-navBar .divider {
+    width: 100% !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important
+}
+// Dropdown Menu Navigation Bar
+// -----------------------------
+.udo-navBar ul li.dropdown:hover > ul.dropdown-menu, .dropdown-submenu:hover .new-submenu,
+.udo-navBar ul li.dropdown.open > ul.dropdown-menu, .dropdown-submenu.open .new-submenu {
+    display: block;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    .component-background;
+    .box-shadow(@shadow);
+	.box-shadow(@shadowOuter);
+    cursor:pointer;
+    margin-top: 0;
+    text-align: left;
+}
+
+.udo-navBar ul li.dropdown > ul.dropdown-menu,
+.udo-navBar ul li.dropdown > ul.dropdown-menu li.dropdown-submenu ul.new-submenu{
+    float: left; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: @grayFont;
+    text-shadow: @shadowText;
+    text-decoration: none;
+    padding: 5px 0;
+}
+.udo-navBar ul li.dropdown > ul.dropdown-menu li, .udo-navBar ul li.dropdown > ul.dropdown-menu li:first-child,
+ .udo-navBar ul li.dropdown > ul.dropdown-menu li:last-child, .new-submenu li, .new-submenu li:first-child, .new-submenu li:last-child{
+    width: 76%;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: left;
+    float: left;
+}
+.udo-navBar ul li.lists > ul.dropdown-menu li {
+    width: 300px !important;
+}
+
+.dropdown-menu .divider {
+    height: 1px;
+    margin: 9px 1px;
+    overflow: hidden;
+    background-color: #1f2328;
+    border-bottom: 1px solid @grayFont;
+    min-width: 180px !important;
+}
+
+// Hover/Focus state
+// -----------
+.udo-navBar ul li.dropdown > ul.dropdown-menu li:hover, .udo-navBar ul li.dropdown > ul.dropdown-menu li a:hover {
+    background: 0;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    cursor: pointer;
+    color: @white;
+    .nav-items-shadows;
+    width: 100%;
+    padding-right: 0px;
+}
+.udo-navBar ul li.dropdown > ul.dropdown-menu li a{
+    width: 100%;
+}
+
+// Caret to indicate there is a submenu
+.dropdown-submenu > a:after, .dropdown-submenu > a:hover {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: white;
+}
+.dropdown-submenu:hover > a:after {
+    border-left-color: @dropdownLinkColorHover;
+}
+
+.dropdown-submenu > a {
+    float: right;
+    width: 100% !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: @grayFont;
+    text-shadow: @shadowText;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    text-decoration: none;
+    border-width: 5px 0 5px 5px;
+}
+//.new-submenu{
+//    height: auto !important;
+//    max-height: 400px;
+//    overflow-y: scroll;
+//}
+
+// Caret should match text color on hover/focus
+.udo-navBar li.dropdown > a:hover .caret,
+.udo-navBar li.dropdown > a:focus .caret,
+.udo-navBar li.dropdown > p:hover .caret,
+.udo-navBar li.dropdown > p:focus .caret {
+    border-top-color: @white;
+    border-bottom-color: @white;
+    cursor: pointer;
+}
+
+// Remove background color from open dropdown
+.udo-navBar li.dropdown.open > .dropdown-toggle,
+.udo-navBar li.dropdown.active > .dropdown-toggle,
+.udo-navBar li.dropdown.open.active > .dropdown-toggle {
+    background-color: @navbarLinkBackgroundActive;
+    color: @navbarLinkColorActive;
+}
+.udo-navBar li.dropdown > .dropdown-toggle .caret {
+    border-top-color: @grayFont;
+    border-bottom-color: @grayFont;
+    margin-left: 4px;
+    margin-top: 13px;
+}
+.udo-navBar li.dropdown.open > .dropdown-toggle .caret,
+.udo-navBar li.dropdown.active > .dropdown-toggle .caret,
+.udo-navBar li.dropdown.open.active > .dropdown-toggle .caret {
+    border-top-color: @navbarLinkColorActive;
+    border-bottom-color: @navbarLinkColorActive;
+}
+
+.panel-search {
+    position: relative;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.panel-search.container-fluid {
+    padding: 0
+}
+
+.panel-search input[type="text"] {
+    background-color: transparent;
+    margin-top: 0;
+    font-size: @fontSize14;
+    border: 0 solid #333;
+    color: @grayFont;
+    padding-right: 18%;
+    background-color: rgba(46, 53, 63, 0.5);
+    background-image: -moz-linear-gradient(top, rgba(53, 61, 72, 0.3), rgba(42, 49, 58, 0.8));
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(53, 61, 72, 0.3)), to(rgba(42, 49, 58, 0.8)));
+    background-image: -webkit-linear-gradient(top, rgba(53, 61, 72, 0.3), rgba(42, 49, 58, 0.8));
+    background-image: -o-linear-gradient(top, rgba(53, 61, 72, 0.3), rgba(42, 49, 58, 0.8));
+    background-image: linear-gradient(to bottom, rgba(53, 61, 72, 0.3), rgba(42, 49, 58, 0.8));
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#4d353d48', endColorstr = '#cc2a313a', GradientType = 0);
+    .transition(background-color .095s linear);
+    text-shadow: @shadowText;
+    width: 80%;
+    box-shadow: 2px 2px 3px -1px rgba(0, 0, 0, 0.1) inset, 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.panel-search input[type="text"]:focus {
+    background: @white;
+    color: #333;
+    text-shadow: none;
+}
+
+.panel-search .btn-search {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    padding: 0;
+    margin: 0;
+    height: 26px;
+    width: 30px;
+    border: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border-left: 1px solid rgba(100, 108, 117, 0.4);
+    background: transparent url('/betacompany/udo_ui/img/search_icon_dark@2x.png') no-repeat;
+    background-size: 15px 15px;
+    background-position: center center;
+    cursor: pointer;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none
+}
+
+.panel-search .btn-search:hover {
+    background: transparent url('/betacompany/udo_ui/img/search_icon_dark@2x.png') no-repeat;
+    background-size: 15px 15px;
+    background-position: center center;
+    border: 0;
+    border-left: 1px solid rgba(100, 108, 117, 0.4);
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    
+    .udo-navBar ul li.live a {
+	display: none;
+    }
+    .udo-navBar ul li:last-child {
+	width: 40%;
+    }
+
+    .udo-navBar ul li:last-child:hover {
+	width: 40%;
+    }
+    .panel-search input, .panel-search textarea, .uneditable-input {
+	width: 60%; // plus 12px padding and 2px border
+    }
+    .nav li a.title-resp {
+	display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .udo-navBar ul li.live a {
+	display: none;
+    }
+    
+    .udo-navBar ul li:last-child {
+	width: 40%;
+    }
+
+    .udo-navBar ul li:last-child:hover {
+	width: 40%;
+    }
+    .panel-search input, .panel-search textarea, .uneditable-input {
+	width: 60%; // plus 12px padding and 2px border
+    }
+    .nav li a.title-resp {
+	display: none;
+    }
+
+    #areabuttons .left {
+	width: 35%;
+    }    
+    
+    #areabuttons .right {
+	width: 65%;
+    }
+    #symptoms ul {
+	margin-left: 10px !important;
+    }
+    
+
+}
+
+@media (max-width: 1200px) {
+    .nav li a.title-resp {
+	display: none;
+    }
+    
+    #udo-navBar ul .new-submenu {
+	width: 27em !important;
+	li {
+	    float:left !important;
+	    width: 13em !important;
+	}
+    }
+}
+
+@media (max-height: 767px) {
+    
+    .main-content {
+	min-height: 400px !important;
+    }
+    .modal-body-extend {
+	max-height: 360px !important;
+    }
+    #addNotesModal .ngViewport {   
+	max-height: 200px !important;
+    }
+    #incHistModal .ngViewport, #statHistModal .ngViewport,  #ticketHistModal .ngViewport, #incContHistModal .ngViewport {
+	max-height: 290px !important;
+    }
+}
+
+@media (max-height: 1023px) {
+    
+    .main-content {
+	min-height: 750px !important;
+    }
+}
+
+li {
+    line-height: 20px;
+}
+
+.nav-tabs{
+    margin-bottom: 0px !important;
+}
+
+// Links
+.nav-tabs > li > a {
+  float: none;
+  // Vertically center the text given @navbarHeight
+  padding: ((@navbarHeight - @baseLineHeight) / 2) 15px ((@navbarHeight - @baseLineHeight) / 2);
+  color: @navbarLinkColor;
+  text-decoration: none;
+  text-shadow: 0 1px 0 @navbarBackgroundHighlight;
+}
+
+
+// Hover/focus
+.nav-tabs > li > a:focus,
+.nav-tabs > li > a:hover {
+    border-color: #CCCCCC;
+    color: #080808;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+// Active nav items
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover,
+.nav-tabs > .active > a:focus {
+  color: #666666;
+  text-decoration: none;
+  border-top-color: #CCCCCC;
+  border-left-color: #CCCCCC;
+  border-right-color: #CCCCCC;
+  font-weight: bold;
+  //background-color: @navbarLinkBackgroundActive;
+  //.box-shadow(inset 0 3px 8px rgba(0,0,0,.125));
+}
+
+.nav > .disabled > a {
+    color: transparent !important;
+    text-shadow: none !important;
+    border: 0px solid black;
+}
+
+.tab-content {
+    background-color: white !important;
+    border-top-color: transparent !important;
+    border-bottom-color: #CCCCCC !important;
+    border-left-color: #CCCCCC !important;
+    border-right-color: #CCCCCC !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;   
+}
+.tab-content > .tab-pane, .tab-content > .tab-pane:first-of-type {
+    padding: 10px !important;
+}
+
+
+#udo-navBar ul .new-submenu {
+    width: 53em;
+    li {
+	float:left;
+	width: 13em;
+    }
+}

@@ -1,0 +1,24 @@
+.nav-items-shadows(@color: @shadowLinkColorHover) {
+    color: @color;
+    background-color: @shadowBackground;
+    .box-shadow(@shadow);
+}
+
+.widget-head-border-radius() {
+    .border-radius(8px 8px 0 0);
+}
+
+.widget-head-box-shadow() {
+    .box-shadow(inset 0 1px 0 rgba(225, 225, 225, 0.2));
+}
+
+.navBar-box-shadow() {
+    .box-shadow(inset -2px 0 0 -1px rgba(39, 44, 50, 1));
+}
+
+.form-box-shadow() {
+    .box-shadow("inset 2px 2px 3px -1px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(255, 255, 255, 0.3)");
+}
+.form-transition() {
+    .transition("background-color linear .2s, box-shadow linear .2s");
+}

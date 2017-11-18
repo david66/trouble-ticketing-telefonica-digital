@@ -1,0 +1,75 @@
+// Specific styles for sidebar component
+
+.sidebar-fixed {
+    padding: 0 0;
+    position: fixed;
+    height: 100%;
+    z-index: 1003;
+    top: 0;
+    left: 0;
+}
+
+.sidebar-fixed:hover {
+    width: 300px;
+    z-index: 1003;
+    .widget-holder-sidebar{
+	display: inline-block;
+    }
+}
+
+// TODO: use here properly defined variables (for shadow, and colors)
+.sidebar-dark {
+    margin-left: 0;
+    padding-top: 5px;
+	.box-shadow(@shadowOuter);
+    .component-background;
+    z-index: 1000;
+}
+.nav-main-menu-list {
+    min-width: 17px;
+}
+.nav-main-menu-list {
+    > li > a {
+        color: @grayFont;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 1px;
+	text-shadow: @shadowText;
+    }
+}
+
+// Active state
+.nav-main-menu-list  > .active > a,
+.nav-main-menu-list  > .active > a:hover,
+.nav-main-menu-list  > .active > a:focus {
+    color: @white;
+    background-color: @componentBackground;
+    font-weight: bold;
+}
+
+// Hover/Focus state
+// -----------
+.nav-main-menu-list > li > a:hover,
+.nav-main-menu-list > li > a:focus,
+.nav-main-menu-list:hover > a,
+.nav-main-menu-list:focus > a {
+    overflow: hidden;
+    border-top: 1px solid #1f2328;
+    border-bottom: 1px solid #1f2328;
+    .nav-items-shadows;
+}
+
+.pull-down-element {
+    overflow: hidden;
+    padding-right: 0 !important;
+}
+
+.main-menu-text {
+    max-width: 0;
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+

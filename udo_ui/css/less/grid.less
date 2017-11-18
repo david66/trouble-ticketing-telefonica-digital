@@ -1,0 +1,331 @@
+/*Only for developing, remove when make the good stilyng */
+.gridStyle {
+    max-width: 100% !important;
+    background-color: #F6F6F6;
+    border: 1px solid #D1D7DF;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.8);
+    padding: 0;
+}
+
+.readonly-white {
+  background-color: white !important;
+  cursor: pointer !important;
+}
+.semaphore.red {
+color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #da4f49;
+  *background-color: #bd362f;
+  background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
+  background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+  background-repeat: repeat-x;
+  border-color: #bd362f #bd362f #802420;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.semaphore.green {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #5bb75b;
+  *background-color: #51a351;
+  background-image: -moz-linear-gradient(top, #62c462, #51a351);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+  background-image: -o-linear-gradient(top, #62c462, #51a351);
+  background-image: linear-gradient(to bottom, #62c462, #51a351);
+  background-repeat: repeat-x;
+  border-color: #51a351 #51a351 #387038;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.semaphore.yellow {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #fAF232;
+  *background-color: #f8EE06;
+  background-image: -moz-linear-gradient(top, #FBED50, #f8EE06);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FBED50), to(#f8EE06));
+  background-image: -webkit-linear-gradient(top, #FBED50, #f8EE06);
+  background-image: -o-linear-gradient(top, #FBED50, #f8EE06);
+  background-image: linear-gradient(to bottom, #FBED50, #f8EE06);
+  background-repeat: repeat-x;
+  border-color: #f8EE06 #f8EE06 #DBE406;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffFBED50', endColorstr='#fff8EE06', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.semaphore.orange {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #faa732;
+  *background-color: #f89406;
+  background-image: -moz-linear-gradient(top, #fbb450, #f89406);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
+  background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
+  background-image: -o-linear-gradient(top, #fbb450, #f89406);
+  background-image: linear-gradient(to bottom, #fbb450, #f89406);
+  background-repeat: repeat-x;
+  border-color: #f89406 #f89406 #ad6704;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.semaphore.red:focus,.semaphore.red:active,.semaphore.red.active,.semaphore.red:hover,
+.semaphore.green:focus,.semaphore.green:active,.semaphore.green.active,.semaphore.green:hover,
+.semaphore.yellow:focus,.semaphore.yellow:active,.semaphore.yellow.active,.semaphore.yellow:hover,
+.semaphore.orange:focus,.semaphore.orange:active,.semaphore.orange.active,.semaphore.orange:hover,
+{
+    background-position: 0 0px !important;
+}
+.nowrap {
+    white-space: nowrap;
+}
+a.nodecorate {
+	color: #999999;
+	text-decoration: none;
+}
+.filter {
+    width: 77%;
+}
+.csv-export {
+    float: right;
+    padding: 19px 30px 0 0;
+} 
+
+
+
+/** GRID STYLE OVERWRITTING **/
+.ngRow {
+  position: absolute;
+
+}
+.ngRow.odd {
+    background-color: rgba(220, 220, 220, 0.3) !important;
+    font-size: 15px !important;
+    border-bottom: 1px solid #D1D7DF !important;
+}
+.ngRow.even {
+    font-size: 14px !important;
+    border-top: 1px solid #D1D7DF !important;
+}
+
+.ngRow.even:hover, .ngRow.odd:hover {
+  background-color: #EAEAEA !important;
+  cursor: pointer !important;
+}
+#relatedProblemsDetail > .ngRow.even:hover, #relatedProblemsDetail > .ngRow.odd:hover {
+    cursor: default !important;
+}
+
+
+.ngRow.selected {
+    background-color: rgba(24, 84, 95, 0.1) !important;
+}
+
+.ngTopPanel {
+    background-color: rgba(220, 220, 220, 0.3) !important;
+    border-bottom: 1px solid #D1D7DF !important;
+}
+.ngHeaderText {
+    background: url('/betacompany/udo_ui/img/border_grid.png') no-repeat !important;
+    background-position: right;
+}
+.ngHeaderText:hover {
+    cursor: pointer;
+    background-color: #e5e5e5;
+    -webkit-box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.125);
+    -moz-box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.125);
+    text-shadow: 0 1px 0 #ffffff;
+}
+
+.ngHeaderContainer {
+    font-weight: normal !important;
+    font-size: 15px !important;
+    border-bottom: 1px solid #D1D7DF;
+    line-height: 28px;
+    color: #333333;
+}
+
+.ngGroupPanel {
+    border-radius: 6px 6px 0px 0px !important;   
+}
+
+.ngGroupPanelDescription {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 39%, rgba(0, 0, 0, 0.06) 100%);
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom: 1px solid #D1D7DF;
+    font-weight: normal !important;
+    font-size: 14px !important;
+    line-height: 32px;
+    color: #333333;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    padding-left: 15px;
+    height: 32px !important;
+}
+.ngFooterPanel {
+    background-color: rgba(220, 220, 220, 0.3) !important;
+    font-weight: normal !important;
+    font-size: 14px !important;
+    border-bottom: 1px solid #D1D7DF;
+    line-height: 28px;
+    color: #333333;
+}
+.ngPagerButton {
+    border: 1px solid #D1D7DF !important;
+}
+
+.ngVerticalBarVisible {
+    width: 0 !important;
+}
+.ngCell {
+    background-color: transparent 
+}
+.ngCellText {
+    color: #666666 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    padding: 10px !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.ngCellText:hover, .ngCellText span:hover{
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    cursor: pointer !important;
+}
+
+.ngCellText  button {
+    cursor: pointer !important;
+}
+.ngHeaderButton {
+    border-radius: 3px !important;
+    background-color: #FFFFFF !important;
+    height: 24px !important;
+    right: 10px !important;
+    top: 3px !important;
+    width: 34px !important;
+    background: url('/betacompany/udo_ui/img/filter_grid.png') no-repeat !important;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    border: 1px solid #cccccc;
+    border-bottom-color: #b3b3b3;
+}
+.ngHeaderButton:hover {
+    background-color: #FFFFFF !important;
+    opacity:0.5;
+    filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.ngHeaderButtonArrow {
+    left: 5px !important;
+    top: 7px !important;
+    display:none !important;
+}
+
+.ngGrid input {
+    color: #666666 !important;
+}
+.paddingP {
+	padding-top: 6px;
+	border-top: 1px solid #D1D7DF;
+}
+.garbage-button{
+    cursor: pointer;
+    margin-left: 2px !important;
+}
+
+.multilineCellText {
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
+    white-space: pre-line;
+    cursor: default !important
+}
+
+.multilineCellText .enabled {
+    cursor: pointer !important;
+}
+
+.sidebarRight {
+    background: #F6F6F6;
+    height: 100%;
+    padding-left: 25px;
+    padding-right: 14px;
+    position: fixed;
+    right: 0;
+    width: 40%;
+    z-index: 4000;
+    white-space: pre-wrap;
+    .box-shadow(@shadowOuter);
+}
+
+.rightbarTitles {
+    color: #529CC5;
+    font-size: 1.2em;
+    height: 1.1em;
+}
+
+.blueColorSidebar {
+    color: #529CC5 !important;
+}
+
+.blueTitles {
+    display: inline;
+    color: #529CC5;
+}
+.enabled {
+    color: #529CC5;
+}
+
+.disabled {
+    color: #BBBBBB;
+}
+.input-date-grid {
+    width:90px !important;
+}
+.ngColList input {
+    width: auto !important;
+}
+.ngColList {
+    color: #333333 !important;
+}
+
+.ngColMenu {
+    background-color: #E3E3E3 !important;
+    box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.6) !important;
+    color: #333333 !important;
+    right: 10px !important;
+    top: 30px !important;
+}
+#incHistModal .ngViewport, #statHistModal .ngViewport,  #ticketHistModal .ngViewport, #incContHistModal .ngViewport {
+    overflow: auto !important;
+    min-height: 20px !important;
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+    max-height: 480px !important;
+}
+
+#addNotesModal .ngViewport{
+    overflow: auto !important;
+    min-height: 20px !important;
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+    max-height: 480px important;
+}
+
+.grid-container .ngViewport {
+    overflow-y: hidden;
+}
+

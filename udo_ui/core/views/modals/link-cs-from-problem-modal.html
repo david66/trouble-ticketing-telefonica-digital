@@ -1,0 +1,18 @@
+<!-- Main Content ==================== -->
+<!-- End Main Content ==================== -->
+<div id="associate" class="row-fluid">
+    <div class="row-fluid">
+        <!-- Note description -->
+        <div class="modalAssociateService">
+            <div class="span4">
+              <label class="">{{'Customer Service' | i18n}}</label>
+              <select class="" id="newCustomerService" ng-model="newService.newCustomerService" ng-options="cs.code for cs in newService.css" ng-change="afterCustomerServiceSelection(newService.newCustomerService)"">
+                <option value=""> -- chose a customer service </option>
+              </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

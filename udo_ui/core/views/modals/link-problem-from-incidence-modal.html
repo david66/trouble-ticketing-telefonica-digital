@@ -1,0 +1,44 @@
+<!-- Main Content ==================== -->
+<!-- End Main Content ==================== -->
+<div id="link" class="row-fluid">
+    <div class="row-fluid">
+        <!-- Note description -->
+        <div class="modalLinkProblem">
+            <div class="span4">
+              <label class="">{{'Problem' | i18n}}</label>
+              <select class="" id="newProblem" ng-model="newProblem.newProblem" ng-options="problem.eid for problem in newProblem.problems" ">
+                <option value=""> Choose a problem </option>
+              </select>
+            </div>
+            <div class="form-horizontal container-fluid"> <b> {{ 'Problem Detail summary' | i18n }} </b>
+                <div class="divContentModal" style="background-color: #F6F6F6;">
+                    <div class="control-group row-fluid">
+                        <div class="">
+                            <div class="span3">
+                                <label>{{ 'ID' | i18n }}</label>
+                                <input type="text" disabled="" role="textbox" autocomplete="off" class="ui-autocomplete-input ng-scope" value="{{ newProblem.newProblem.eid }}">
+                            </div>
+                            <div class="span3">
+                                <label>{{ 'Problem Type' | i18n }}</label>
+                                <input type="text" disabled="" role="textbox" autocomplete="off" class="ui-autocomplete-input ng-scope" value="{{ newProblem.newProblem.type.code }}">
+                            </div>
+                            <div class="span3">
+                                <label>{{ 'Status' | i18n }}</label>
+                                <input type="text" disabled="" role="textbox" autocomplete="off" class="ui-autocomplete-input ng-scope" value="{{ newProblem.newProblem.status }}">
+                            </div>
+                            <div class="span3">
+                                <label>{{ 'Submission Date' | i18n }}</label>
+                                <input type="text" disabled="" role="textbox" autocomplete="off" class="ui-autocomplete-input ng-scope" value="{{ newProblem.newProblem.status_change.0.start }}">
+                            </div>
+                            <div class="span12">
+                                <label>{{ 'Description' | i18n }}</label>
+                                <input type="text" disabled="" role="textbox" autocomplete="off" class="ui-autocomplete-input ng-scope" value="{{ newProblem.newProblem.type.description }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

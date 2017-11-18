@@ -1,0 +1,345 @@
+<!-- Content of betacompany/portal/udo_ui/templates/ui_base.html -->
+
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="udoApp">
+  <head>
+
+    <!--[if lte IE 8]>
+      <script>
+        document.createElement('ng-include');
+        document.createElement('ng-pluralize');
+        document.createElement('ng-view');
+
+        // Optionally these for CSS
+        document.createElement('ng:include');
+        document.createElement('ng:pluralize');
+        document.createElement('ng:view');
+      </script>
+    <![endif]-->
+
+
+      <!-- ui-bootstrap styles -->
+      <link rel="stylesheet" type="text/css" href="/betacompany/udo_ui/lib/twitter-bootstrap/css/bootstrap-2.3.1.min.css" />
+      
+      <!-- styling -->
+      <link rel="stylesheet" type="text/css" href="/betacompany/udo_ui/css/udo.css" />
+
+      <style type="text/css">
+          @charset "UTF-8";
+          [ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak { display: none; }
+      </style>
+
+      <link rel="stylesheet" type="text/css" href="/betacompany/udo_ui/css/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+      <!--  ng-grid styles -->
+      <link rel="stylesheet" type="text/css" href="/betacompany/udo_ui/lib/ng-grid/ng-grid.css" />
+      <link rel="stylesheet" type="text/css" href="/betacompany/udo_ui/lib/bootstrap-datepicker/css/datepicker.css" />
+      <link rel="stylesheet" type="text/css" href="/betacompany/udo_ui/lib/xeditable/css/xeditable.css" />
+       <!-- <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/overcast/jquery-ui.css" /> -->
+
+      <!-- JS libraries -->
+      <link rel="stylesheet" href="/betacompany/udo_ui/lib/angular-bootstrap-datetimepicker/src/css/datetimepicker.css"/>
+
+      <script src="/betacompany/udo_ui/lib/jquery/jquery-1.8.3.min.js"></script>
+      <script src="/betacompany/udo_ui/lib/angular-strap/angular-strap-partial.js"></script>
+      <script src="/betacompany/udo_ui/lib/jquery/jquery.form.js"></script>
+      <script src="/betacompany/udo_ui/lib/popover-jq.js"></script>
+      <script src="/betacompany/udo_ui/lib/angular/angular-min-1.2.0-rc.3.js"></script>
+      <script src="/betacompany/udo_ui/lib/angular/angular-route-min-1.2.0-rc.3.js"></script>
+      <script src="/betacompany/udo_ui/lib/angular/angular-sanitize.min.js"></script>
+      <script src="/betacompany/udo_ui/lib/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+      <script src="/betacompany/udo_ui/lib/ui-bootstrap-tpls-0.6.0.js"></script>
+      <script src="/betacompany/udo_ui/lib/xeditable/js/xeditable.js"></script><!-- include x-editable after bootstrap -->
+      <script src="/betacompany/udo_ui/core/directives/xeditable-extend.js"></script>
+      <script src="/betacompany/udo_ui/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+      <!-- Datepicker Langs -->
+      <!-- // <script src="/betacompany/udo_ui/lib/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js"></script> -->
+      <!-- // <script src="/betacompany/udo_ui/lib/bootstrap-datepicker/js/locales/bootstrap-datepicker.pt.js"></script> -->
+
+      <script src="/betacompany/udo_ui/lib/moment/moment.js"></script>
+      <script src="/betacompany/udo_ui/lib/truncate.js"></script>
+
+      <!--  ng-grid library -->
+      <script type="text/javascript" src="/betacompany/udo_ui/lib/ng-grid/ng-grid-2.0.7.debug.js"></script>
+      <!--  ng-grid plugins -->
+      <script type="text/javascript" src="/betacompany/udo_ui/lib/ng-grid/ng-grid-flexible-height.js"></script>
+      <script type="text/javascript" src="/betacompany/udo_ui/core/directives/ng_grid_csv.js"></script>
+      <!-- probe if necessary -->
+      <script src="/betacompany/udo_ui/lib/django_csrf.js"></script>
+
+      <!-- JS project files -->
+      {% block udo_project_js %}
+      <script src="/betacompany/udo_ui/core/app.js"></script>
+      <script src="/betacompany/udo_ui/core/router.js"></script>
+      <script src="/betacompany/udo_ui/core/directives/file-upload.js"></script>
+      <script src="/betacompany/udo_ui/core/directives/editable.js"></script>
+      <script src="/betacompany/udo_ui/core/directives/udo-attachments.js"></script>
+      <script src="/betacompany/udo_ui/core/directives/udo_annotations.js"></script>
+      <script src="/betacompany/udo_ui/core/directives/udo-questions.js"></script>
+      <script src="/betacompany/udo_ui/core/directives/field-dispatcher.js"></script>
+      <script src="/betacompany/udo_ui/core/directives/field_line_dispatcher.js"></script>
+      <script src="/betacompany/udo_ui/core/directives/box-container.js"></script>
+      <script src="/betacompany/udo_ui/core/services/create-dialog.js"></script>
+      <script src="/betacompany/udo_ui/core/services/annotations_op.js"></script>
+      <script src="/betacompany/udo_ui/core/services/questions_op.js"></script>
+      <script src="/betacompany/udo_ui/core/services/data_provider.js"></script>
+      <script src="/betacompany/udo_ui/core/services/validations.js"></script>
+      <script src="/betacompany/udo_ui/core/directives/template-description.js"></script>
+      <script src="/betacompany/udo_ui/core/directives/udo_datetimepicker.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/controllers.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/sidebar_ctrl.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/navbar_ctrl.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/widget_ctrl.js"></script>
+
+      <script src="/betacompany/udo_ui/core/services/status_change_dialog.js"></script>
+
+      <script src="/betacompany/udo_ui/core/controllers/detail_ticket_ctrl.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/detail_incidence_ctrl.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/detail_problemtype_ctrl.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/detail_symptom_ctrl.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/detail_problem_ctrl.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/detail_workorder_ctrl.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/new_ticket_ctrl.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/new_entity_ctrl.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/list_ctrl.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/add_new_note_ctrl.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/add_new_questionthread_ctrl.js"></script>
+
+      <script src="/betacompany/udo_ui/core/services/utils.js"></script>
+      <script src="/betacompany/udo_ui/core/services/configs.js"></script>
+      <script src="/betacompany/udo_ui/core/services/modal_gen.js"></script>
+      <script src="/betacompany/udo_ui/core/services/common.js"></script>
+      <script src="/betacompany/udo_ui/core/directives/grid-date-picker.js"></script>
+      <script src="/betacompany/udo_ui/core/controllers/grid_ctrl.js"></script>
+
+      <script src="/betacompany/udo_ui/core/services/udo_api.js"></script>
+      <script src="/betacompany/udo_ui/i18n/translator.js"></script>
+      <script src="/betacompany/udo_ui/core/filters/udo_filters.js"></script>
+      <script src="/betacompany/udo_ui/core/utils/basic.js"></script>
+      <script src="/betacompany/udo_ui/core/utils/linkedlist.js"></script>
+      <script src="/betacompany/udo_ui/core/directives.js"></script>
+      {% endblock %}
+
+      {% block extrahead %}
+      <title>UDo</title>
+      {% endblock %}
+  </head>
+  <body {% block bodyproperties %}{% endblock%}>
+  {% block content %}
+  {% endblock %}
+
+
+<!-- Content of betacompany/portal/udo_ui/templates/udo.html -->
+
+{% load verbatim %}
+{% block content %}
+{% verbatim %} 
+<div id="loading-page" class="modal-backdrop fade in" ng-controller="loadingPageCtrl" ng-show="showLoading()">
+  <div class="progress progress-striped active">
+    <div class="bar" ></div>
+  </div>
+</div>
+<div id="udo-container" class="udo-container" ng-controller="mainCtrl">
+  <!-- Sidebar ==================== -->
+  <div id="sidebar" ng-controller="sidebarCtrl" class="sidebar-fixed sidebar-dark ">
+    <ul id="sidebarMainMenuList" class="nav nav-pills nav-stacked nav-main-menu-list">
+      <li ng-repeat="link in mainLinks" class="{{ link.active }}">
+        <a class="pull-down-element" href="{{ link.url }}">
+          <i class="{{ link.icon }} pull-left"></i>
+          <span class="main-menu-text">{{ link.name | i18n}}</span>
+        </a>
+      </li>
+    </ul>
+    <div ng-include="'/betacompany/udo_ui/core/views/components/hawkview.html'"></div>
+  </div>
+  <!-- End Sidebar ==================== -->
+  <!-- User menu ==================== -->
+  <div id="user-menu-bar" class="nav-fixed-topright">
+    <ul id="userMenu" class="nav nav-user-menu">
+      <li>
+        <a id="userProfileButton" href="/udo/admin/" target="_blank">
+          <i class="icon-user"></i> {{ USER_DATA.username }}
+        </a>
+      </li>
+      <li class="dropdown">
+        <a id="languageSelectorButton" class="dropdown-toggle" href="#">
+          <img src="/betacompany/udo_ui/img/blank.png" class="flag flag-{{currentLanguage}}" /> {{ currentLanguage | uppercase }}
+          <span class="caret white-caret"></span>
+        </a>
+        <ul class="dropdown-menu" ng-controller="translatorCtrl">
+          <li ng-repeat="lang in availableLangs">
+            <a ng-click="currentLang=changeLanguage('{{lang}}')">
+              <!--<i class="icon-globe"></i>--><img src="/betacompany/udo_ui/img/blank.png" class="flag flag-{{lang}}" />
+              {{ lang | uppercase }}
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li bs-popover="/betacompany/udo_ui/core/views/components/about.html" data-title="About UDo" data-customplacement="about" data-placement="bottom">
+        <a id="aboutUdoButton" href="#">
+          <i class="icon-info-sign"></i>
+        </a>
+      </li>
+      <li>
+        <a id="logoutButton" href="/logout">
+          <i class="icon-off"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="udo-header" class="udo-header">
+    <div class="row-fluid">
+      <div class="span12">
+        <h3><i class="icon-home"> </i>{{'UDo Trouble Ticketing' | i18n}} - v{{ version }} <span class="label label-default">BETA</span></h3>
+      </div>
+    </div>
+  </div>
+  <!-- End User menu ==================== -->
+  <!-- Navigation Bar ==================== -->
+  <div id="udo-navBar" class="udo-navBar navbar-default">
+      <div class="row-fluid">
+        <div class="span12">
+          <ul>
+            <li class="add-ql dropdown">
+              <div id="newElement" class="add-quick-launch dropdown-toggle" data-toggle="dropdown"> </div>
+                <ul id="newElementMenu" ng-controller="newNavBarCtrl" class="dropdown-menu">
+                  <li class="dropdown-submenu">
+                    <a >{{'New Ticket' | i18n}}</a>
+                    <ul ng-controller="newSubmenuNavBarCtrl" class="dropdown-menu new-submenu">
+                      <li ng-repeat="choice in items">
+                        <a href="{{ choice.url }}">{{choice.name}}</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="/ui#/tt/newticket/CS_UDOTT">UDO TROUBLE TICKETING</a> 
+                      </li>
+                    </ul>
+                  </li>
+                  <li ng-repeat="choice in items">
+                    <a href="{{ choice.url }}">{{choice.name | i18n}}</a>
+                  </li>
+                </ul>
+            </li>
+            <li id="lists" class="dropdown lists"> 
+              <p class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-tasks"></i> {{'Lists' | i18n}}
+                <b class="caret"></b>
+              </p>
+              <ul ng-controller="listNavBarCtrl" class="dropdown-menu">
+                <li ng-repeat="list in items">
+                    <a href="{{ list.url }}">{{ list.name | i18n}}</a>
+                  </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="/ui#tt/contacts/">
+                <p>
+                  <i class="icon-time"></i> {{'Contact' | i18n}}<b class="caret"></b>
+                </p>
+              </a>
+              <ul ng-controller="newNavBarSesionCtrl" class="dropdown-menu">
+                <li ng-repeat="list in items">
+                  <a href="{{ list.url }}">{{ list.name | i18n}}</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="/ui#tt/incidences/">
+                <p>
+                  <i class="icon-time"></i> {{'Incidence' | i18n}}<b class="caret"></b>
+                </p>
+              </a>
+              <ul ng-controller="newNavBarSesionCtrl" class="dropdown-menu">
+                <li ng-repeat="list in items">
+                  <a href="{{ list.url }}">{{ list.name | i18n}}</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="/ui#tt/problems/">
+                <p>
+                  <i class="icon-time"></i> {{'Problem' | i18n}}<b class="caret"></b>
+                </p>
+              </a>
+              <ul ng-controller="newNavBarSesionCtrl" class="dropdown-menu">
+                <li ng-repeat="list in items">
+                  <a href="{{ list.url }}">{{ list.name | i18n}}</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div id="search" class="panel-search">
+                <form class="form-horizontal" action="">
+                  <input id="panelSearch" placeholder="{{'Search' | i18n}}" type="text" x-webkit-speech name="panelSearch" class="ui-autocomplete-input" autocomplete="off">
+                    <button class="btn btn-search"></button>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <!-- End navigation Bar ==================== -->
+  <!-- Workspace ==================== -->
+  <div id="udo-content" class="udo-content">
+    <div class="row-fluid">
+      <div class="span12">
+        <!-- Navigation Bar Content ==================== -->
+        <div class="navbar" ng-if="!toolbarLinks.isEmpty()">
+          <div class="navbar-inner">
+            <!--<ul class="nav">
+              <li><a class="brand" title="" href="#"> {{ eid }}</a></li>
+              <li class="active"><a href="/ui#/tt/contact/{{ eid }}">{{'New Contact' | i18n}} : {{ title }}</a></li>
+            </ul>-->
+            <ul class="nav">
+              <li ng-repeat="link in toolbarLinks" class="{{ link.active }}" ng-switch="link.type">
+                <!-- Link -->
+                <a ng-switch-when="link" class="{{ link.class }}" href="{{ link.url }}">{{ link.title }}</a>
+                <!-- Link i18n -->
+                <a ng-switch-when="linki18n" class="{{ link.class }}" href="{{ link.url }}">{{ link.title|i18n }}</a>
+                <!-- Icon -->
+                <div ng-switch-when="icon" class="pull-down-element">
+                  <div class="navbar-icon"><i class="{{ link.icon }}"></i></div>
+                </div>
+                <!-- label -->
+                <div ng-switch-when="label">
+                  <label class="{{ link.class }}">{{ link.title }}</label>
+                </div>
+                <!-- Label i18n -->
+                <div ng-switch-when="labeli18n">
+                  <label class="{{ link.class }}">{{ link.title|i18n }}</label>
+                </div>
+              </li>
+            </ul>
+            <div class="navbar-icon"> <i class="icon-save" title="{{'Save' | i18n}}"></i> <i class="icon-print" title="{{'Print' | i18n}}"></i> <i class="icon-refresh" title="{{'Refresh' | i18n}}"></i></div>
+          </div>  
+        </div>
+        <div class="sidebarContent-fixed sidebar-dark" ng-if="!sidebarLinks.isEmpty()">
+          <ul id="sidebarContentMainMenuList" class="nav nav-pills nav-stacked">
+            <li ng-repeat="link in sidebarLinks"">
+              <a class="pull-down-element" ng-click="handleAction(link)" class="{{ link.active }}>
+              <i class="{{ link.icon }} pull-left"></i>
+              <span class="main-menu-text">{{ link.name | i18n }}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- End Navigation Bar Content ==================== -->
+        <div ng-view></div>
+      </div>
+    </div>
+  </div>
+  <!-- End Workspace ==================== -->
+  <!-- Watermark Logo ==================== -->
+  <div class="dashboard-watermark"></div>
+  <!-- End Watermark Logo ==================== -->
+</div>
+{% endverbatim %}
+{% endblock %}
+
+
+
+
+  </body>
+</html>
